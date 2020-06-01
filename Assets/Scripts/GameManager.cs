@@ -31,9 +31,9 @@ public class GameManager : MonoBehaviour
             return;
         }
       
-        currentTime = Time.time.ToString("f3");
+        currentTime = Time.time.ToString("f1");
         currentTime = currentTime + " sec.";
-        countTime.text = currentTime;
+        countTime.text = "Time: "+currentTime;
         ScoreText.text = "Score:-  " + currentTime;
     }
     public void updateNeedle()
@@ -41,6 +41,6 @@ public class GameManager : MonoBehaviour
         desiredPosition = startPosiziton - endPosition;
         float temp = vehicleSpeed/ 180;
         neeedle.transform.eulerAngles = new Vector3(0, 0, (startPosiziton - temp * desiredPosition));
-        Debug.Log((startPosiziton - temp * desiredPosition));
+        //Debug.Log((startPosiziton - temp * desiredPosition));
     }
 }

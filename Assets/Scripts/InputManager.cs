@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class InputManager:MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class InputManager:MonoBehaviour
 
     private void FixedUpdate()
     {
-        vertical = Input.GetAxis("Vertical");
-        horizontal = Input.GetAxis("Horizontal");
+        //vertical = CrossPlatformInputManager.GetAxis("Vertical");
+        vertical = 1f;
+        horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
         Brake = (Input.GetAxis("Jump")!=0) ? true : false;
     }
 

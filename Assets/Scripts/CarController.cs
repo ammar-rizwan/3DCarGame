@@ -27,6 +27,7 @@ public class CarController : MonoBehaviour
     public float smoothTime=0.09f;
     public int gearNum = 1;
     public GameObject gameUI;
+
     //public void GetInput(){
     //    m_horizontalInput = CrossPlatformInputManager.GetAxis("Horizontal");
     //    m_verticalInput= CrossPlatformInputManager.GetAxis("Vertical");

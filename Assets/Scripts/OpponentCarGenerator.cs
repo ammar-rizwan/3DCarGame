@@ -16,7 +16,7 @@ public class OpponentCarGenerator : MonoBehaviour
 
     // Update is called once per frame
     private void GenerateRandomObstacle(){
-            float number =Random.Range(2.5f,-2.5f);
+            float number =Random.Range(0f,-2.5f);
             float zaxis = Random.Range(0f,66f);
 
             Instantiate(oppoCar,new Vector3(number,0f,transform.position.z),Quaternion.Euler(0f,180f,0f)); 
