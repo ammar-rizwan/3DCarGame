@@ -1,17 +1,14 @@
-﻿<Properties StartupConfiguration="{81DA7C69-D1BD-9623-F28A-EDFD08568566}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CarController.cs">
-    <Files>
-      <File FileName="Assets/Scripts/NewClass.cs" Line="16" Column="44" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="29" Column="40" />
-      <File FileName="Assets/Scripts/CarController.cs" Line="10" Column="55" />
-    </Files>
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="3DCar Game" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="CarController.cs" selected="True" />
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Assets" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="GameManager.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>

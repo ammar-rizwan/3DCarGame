@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 //Video 8 ko Ignore kia tha
 
 public class CarController : MonoBehaviour
@@ -19,12 +20,13 @@ public class CarController : MonoBehaviour
     public float DownForceValue = 50;
     public float radius = 6;
     public float brakePower = 100;
-    public float totalPower;
+    //public float totalPower;
     public float wheelsRPM;
-    public float engineRPM;
+    //public float engineRPM;
     public float[] gears;
     public float smoothTime=0.09f;
     public int gearNum = 1;
+    public GameObject gameUI;
     //public void GetInput(){
     //    m_horizontalInput = CrossPlatformInputManager.GetAxis("Horizontal");
     //    m_verticalInput= CrossPlatformInputManager.GetAxis("Vertical");
@@ -142,6 +144,13 @@ public class CarController : MonoBehaviour
         //WheelMeshes = GameObject.Find("Wheels");
         rigidbody.centerOfMass = CenterofMass.transform.localPosition;
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Opponent")
+        {
+            gameUI.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
+    }
 
 }
