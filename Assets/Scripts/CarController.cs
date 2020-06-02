@@ -31,10 +31,9 @@ public class CarController : MonoBehaviour
     public float distanceTravelled = 0;
     Vector3 lastPosition;
 
+    public Text gameOverText;
 
-    
 
-    
     //public void GetInput(){
     //    m_horizontalInput = CrossPlatformInputManager.GetAxis("Horizontal");
     //    m_verticalInput= CrossPlatformInputManager.GetAxis("Vertical");
@@ -44,6 +43,7 @@ public class CarController : MonoBehaviour
     {
         getObject();
         lastPosition = transform.position;
+        gameUI = GameObject.FindGameObjectWithTag("UITag");
 
     }
 
@@ -63,6 +63,7 @@ public class CarController : MonoBehaviour
         for (int i = 0; i < wheels.Length; i++)
         {
             wheels[i].motorTorque = IM.vertical *  MotorSpeed;
+
         }
         KPH = rigidbody.velocity.magnitude * 3.6f;
         if (IM.Brake)
@@ -161,7 +162,10 @@ public class CarController : MonoBehaviour
     {
         if(collision.collider.tag == "Opponent")
         {
-            gameUI.gameObject.SetActive(true);
+           gameOverText = gameUI.gameObject.GetComponent<Text>();
+
+           gameOverText.text = "Game Over!";
+            gameUI.transform.GetChild(0).gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
     }

@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollowController : MonoBehaviour {
+   
+    private void Start()
+    {
+		objectToFollow = GameObject.FindGameObjectWithTag("Player").transform;
 
-	
+	}
 	public void LookAtTarget()
 	{
 		Vector3 _lookDirection = objectToFollow.position - transform.position;

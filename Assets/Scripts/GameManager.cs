@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     //public Text ScoreText;
     public Sprite PauseSprite;
     public Sprite PlaySprite;
-   
+
+    public GameObject[] Cars;
     private string currentTime;
 
     private float startPosiziton = 220f, endPosition = -40f;
@@ -25,6 +26,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int temp = PlayerPrefs.GetInt("currentCar");
+        Instantiate(Cars[temp], new Vector3(0f, 0.5f, -23f), Quaternion.Euler(0f, 0f, 0f));
+        RR = GameObject.FindGameObjectWithTag("Player").GetComponent<CarController>();
 
     }
 
@@ -67,9 +71,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnRestarButtonClick()
     {
-
         SceneManager.LoadScene(Application.loadedLevel);
-
     }
 
 }

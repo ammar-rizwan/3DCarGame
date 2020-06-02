@@ -6,7 +6,12 @@ public class OpponentCarDestory : MonoBehaviour
 {
 	public Transform objectToFollow;
     public Vector3 offset= new Vector3(0f,0f,-10f);
-        void OnTriggerEnter(Collider other)
+    private void Start()
+    {
+        objectToFollow = GameObject.FindGameObjectWithTag("Player").transform;
+
+    }
+    void OnTriggerEnter(Collider other)
         {
         //  Destory(other);   
         if(other.tag == "Opponent" ){

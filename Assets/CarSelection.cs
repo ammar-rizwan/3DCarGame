@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CarSelection : MonoBehaviour
@@ -11,6 +12,7 @@ public class CarSelection : MonoBehaviour
     public GameObject selectB;
     public GameObject lockImg;
     private int currentCar;
+    
     private void Awake()
     {
         SelectCar(0);
@@ -43,6 +45,7 @@ public class CarSelection : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(i ==_index);
+            transform.GetChild(i).gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
         }
         
     }
@@ -54,10 +57,14 @@ public class CarSelection : MonoBehaviour
     }
     public void ClickedSelect()
     {
-        PlayerPrefs.SetString("Current Car", transform.GetChild(currentCar).ToString());
-        Debug.Log("car selected==>" + PlayerPrefs.GetString("Current Car"));
+        //PlayerPrefs.SetString("currentCar", transform.GetChild(currentCar).ToString());
+        PlayerPrefs.SetInt("currentCar", currentCar);
+        Debug.Log("car selected==>" + PlayerPrefs.GetInt("currentCar"));
+        SceneManager.LoadScene(1);
+
     }
     public void ClickedBuy()
     {
-        }
+
+    }
 }

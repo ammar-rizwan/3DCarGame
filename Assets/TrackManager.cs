@@ -14,7 +14,10 @@ public class TrackManager : MonoBehaviour
     {
          nTrack = trackPrefabs.Length;
          SpawnTrack();
-        SpawnTrack();
+         SpawnTrack();
+         playerTransform= GameObject.FindGameObjectWithTag("Player").transform;
+
+        
     }
 
 // Update is called once per frame
