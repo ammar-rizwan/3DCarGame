@@ -2,7 +2,7 @@ Android
 PlayerPath?
 /Users/shtech/Desktop/Game Programming/3DCarGame/carGame.apk
 SceneListBegin?
-Assets/Scenes/SampleScene.unity
+Assets/Scenes/GameScene.unity
 SceneListEnd?
 ce669872a2be11bc686ea22961d8a3bb Assembly-CSharp.dll:.Joystick
 3c08375166df118bd1801438fc36b92f Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -68,6 +68,8 @@ d3c76b14a25eebd3a3323dd43297919c Unity.TextMeshPro.dll:TMPro.TMP_InputField
 804a288478a42f65c12c989c19fd8819 Assembly-CSharp.dll:.RCC_FixedCamera
 352455aaadb8c98ff36ead557753abfa Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TiltInput
 f96eda2eb7dac1c38740a255766d65fa Assembly-CSharp.dll:.RCC_SkidmarksManager
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 507174d46dacbc5fe45e28485db5dd1e UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -101,10 +103,12 @@ aa165095bcf0f4d99594ea33df01c81b UnityEngine.UI.dll:UnityEngine.UI.Slider
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_MobileUIDrag
+fd603770689195d8c21e05ad28422d62 Assembly-CSharp.dll:.CarRaycaster
 5ea994d8ed8b8b57beabc6fe42cac992 Assembly-CSharp.dll:.RCC_AIWaypointsContainer
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_CreateAudioSource
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.awakeManager
 9e27f44bbf48228f203a37254d40f8ae Assembly-CSharp.dll:.JoystickSetterExample
+f33fbecc2a68d101615789ebb89fee2b Assembly-CSharp.dll:.Animation
 3b82ad0f256d9fa533c7ec731ec014f2 Assembly-CSharp.dll:.RCC_XRToggle
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -163,6 +167,7 @@ c88c4199b288356ec3eb2f0d85abc619 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 d66a8ef05b10d4172ae87aa5e268bed3 Assembly-CSharp.dll:.TrackManager
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 a4e40cd59743944391a1e9b0b0137b28 Assembly-CSharp.dll:.RCC_PoliceSiren
+e44d2d451f60c3855326d217d403149b Assembly-CSharp.dll:.CarSelection
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
 447ea3ab738a2ace6d6ee8ab6a98243b Assembly-CSharp.dll:.RCC_CinematicCamera
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
@@ -213,6 +218,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 528e9858840cb8370d93939fff6b42d9 Assembly-CSharp.dll:.JoystickPlayerExample
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 ffb2cc8bf3a549eb53c199541c1fb00b Assembly-CSharp.dll:.RCC_AIBrakeZonesContainer
+ba498371cb115a3a2aecaa34641eb2e8 Assembly-CSharp.dll:.OpponentCarGenerator1
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_Customization
 219ec6059796d8951d2adcd8505d0dc2 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_Mirror
@@ -235,7 +241,6 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 6346786c2af049db4ad0af7d9015f696 Assembly-CSharp.dll:.RCC_DashboardInputs
 9dac16f3efc511835ac976dfae55f580 Assembly-CSharp.dll:.VariableJoystick
-4fae38d22ca76d8ffd55b2a05efa774c Assembly-CSharp.dll:.GameManager
+2d54ab20e21fa1a088cb952a6a266247 Assembly-CSharp.dll:.GameManager
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_LevelLoader
 ba498371cb115a3a2aecaa34641eb2e8 Assembly-CSharp.dll:.OpponentCarGenerator
-ba498371cb115a3a2aecaa34641eb2e8 Assembly-CSharp.dll:.OpponentCarGenerator1

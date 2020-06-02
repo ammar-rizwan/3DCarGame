@@ -2,7 +2,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CarRaycaster.cs">
     <Files>
       <File FileName="Assets/Scripts/OpponentCarGenerator1.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CarRaycaster.cs" Line="20" Column="75" />
+      <File FileName="Assets/Scripts/CarRaycaster.cs" Line="26" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="40" Column="51" />
+      <File FileName="Assets/Scripts/CarController.cs" Line="24" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +22,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="78259588-91f3-4eb3-9e51-6b6cdc1d8980" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b49eb19f-e45a-498e-a4cf-21c1db3cd4a1" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

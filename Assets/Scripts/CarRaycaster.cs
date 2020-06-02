@@ -26,7 +26,7 @@ public class CarRaycaster : MonoBehaviour
             if (raycastHit.collider.tag == "Opponent")
             {
                 score++;
-                scoreText.text = "Score: "+score.ToString();
+                scoreText.text = score.ToString();
             }
         }
         else

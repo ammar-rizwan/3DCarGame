@@ -7,8 +7,11 @@ public class GameManager : MonoBehaviour
 
     public CarController RR;
     public GameObject neeedle;
-    public Text countTime;
+    public Text TimeText;
     public Text ScoreText;
+    public Text SpeedText;
+    //public Text ScoreText;
+
     private string currentTime;
 
     private float startPosiziton = 220f, endPosition = -40f;
@@ -30,11 +33,11 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-      
+
         currentTime = Time.time.ToString("f1");
         currentTime = currentTime + " sec.";
-        countTime.text = "Time: "+currentTime;
-        ScoreText.text = "Score:-  " + currentTime;
+        TimeText.text = currentTime;
+        SpeedText.text = vehicleSpeed.ToString("f1")+"KM/H";
     }
     public void updateNeedle()
     {
