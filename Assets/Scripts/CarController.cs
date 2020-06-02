@@ -19,7 +19,7 @@ public class CarController : MonoBehaviour
     public float MotorSpeed = 100;
     public float DownForceValue = 50;
     public float radius = 6;
-    public float brakePower = 100;
+    public float brakePower = 500;
     //public float totalPower;
     public float wheelsRPM;
     //public float engineRPM;
@@ -28,6 +28,13 @@ public class CarController : MonoBehaviour
     public int gearNum = 1;
     public GameObject gameUI;
 
+    public float distanceTravelled = 0;
+    Vector3 lastPosition;
+
+
+    
+
+    
     //public void GetInput(){
     //    m_horizontalInput = CrossPlatformInputManager.GetAxis("Horizontal");
     //    m_verticalInput= CrossPlatformInputManager.GetAxis("Vertical");
@@ -36,6 +43,8 @@ public class CarController : MonoBehaviour
     private void Start()
     {
         getObject();
+        lastPosition = transform.position;
+
     }
 
     private void FixedUpdate()
@@ -43,6 +52,9 @@ public class CarController : MonoBehaviour
         addDownForce();
         moveVehicle();
         steerVehicle();
+
+        distanceTravelled += Vector3.Distance(transform.position, lastPosition);
+        lastPosition = transform.position;
         //animatedWheels();
 
     }

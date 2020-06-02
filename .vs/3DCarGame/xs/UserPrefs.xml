@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{7C091928-F702-DA4A-BBAC-6A74FBB7D9C3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CarRaycaster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InputManager.cs">
     <Files>
       <File FileName="Assets/Scripts/OpponentCarGenerator1.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CarRaycaster.cs" Line="26" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="40" Column="51" />
-      <File FileName="Assets/Scripts/CarController.cs" Line="24" Column="27" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="41" Column="69" />
+      <File FileName="Assets/Scripts/CarController.cs" Line="55" Column="1" />
+      <File FileName="Assets/Scripts/InputManager.cs" Line="17" Column="47" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,7 +13,7 @@
           <Node name="3DCarGame" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="CarRaycaster.cs" selected="True" />
+                <Node name="InputManager.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -22,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b49eb19f-e45a-498e-a4cf-21c1db3cd4a1" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="926f5364-6587-47d2-861e-9bae9d501dc8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

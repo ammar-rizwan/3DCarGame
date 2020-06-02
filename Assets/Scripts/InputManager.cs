@@ -14,7 +14,7 @@ public class InputManager:MonoBehaviour
     {
         //vertical = CrossPlatformInputManager.GetAxis("Vertical");
         vertical = 1f;
-        horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+        horizontal = Input.GetAxis("Horizontal");
         Brake = (Input.GetAxis("Jump")!=0) ? true : false;
     }
 

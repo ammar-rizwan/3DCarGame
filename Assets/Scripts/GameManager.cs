@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Text TimeText;
     public Text ScoreText;
     public Text SpeedText;
+    public Text DistanceText;
     //public Text ScoreText;
 
     private string currentTime;
@@ -35,9 +36,9 @@ public class GameManager : MonoBehaviour
         }
 
         currentTime = Time.time.ToString("f1");
-        currentTime = currentTime + " sec.";
-        TimeText.text = currentTime;
+        TimeText.text = currentTime + " Sec.";
         SpeedText.text = vehicleSpeed.ToString("f1")+"KM/H";
+        DistanceText.text = (RR.distanceTravelled/1000).ToString("f2") + "Kms";
     }
     public void updateNeedle()
     {
