@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class GameManager : MonoBehaviour
     public Text SpeedText;
     public Text DistanceText;
     //public Text ScoreText;
-
+    public Sprite PauseSprite;
+    public Sprite PlaySprite;
+   
     private string currentTime;
 
     private float startPosiziton = 220f, endPosition = -40f;
@@ -47,4 +50,26 @@ public class GameManager : MonoBehaviour
         neeedle.transform.eulerAngles = new Vector3(0, 0, (startPosiziton - temp * desiredPosition));
         //Debug.Log((startPosiziton - temp * desiredPosition));
     }
+
+    public void PToggle(Button button)
+    {
+        if (Time.timeScale != 0)
+        {
+            button.GetComponent<Image>().sprite = PlaySprite;
+            Time.timeScale = 0;
+            return;
+        }
+        else
+        {
+            button.GetComponent<Image>().sprite = PauseSprite;
+            Time.timeScale = 1;
+        }
+    }
+    public void OnRestarButtonClick()
+    {
+
+        SceneManager.LoadScene(Application.loadedLevel);
+
+    }
+
 }
