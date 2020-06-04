@@ -1,35 +1,29 @@
 ﻿<Properties StartupConfiguration="{7C091928-F702-DA4A-BBAC-6A74FBB7D9C3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CarController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CarSelection.cs">
     <Files>
       <File FileName="Assets/Scripts/GameManager.cs" Line="32" Column="1" />
-      <File FileName="Assets/Scripts/CarController.cs" Line="168" Column="67" />
-      <File FileName="Assets/Scripts/InputManager.cs" Line="17" Column="27" />
-      <File FileName="Assets/Scripts/EnemyCarDriver.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/OpponentCarGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/OpponentCarGenerator1.cs" Line="15" Column="58" />
+      <File FileName="Assets/Scripts/EnemyCarDriver.cs" />
+      <File FileName="Assets/Scripts/OpponentCarGenerator.cs" />
+      <File FileName="Assets/Scripts/OpponentCarGenerator1.cs" />
+      <File FileName="Assets/CarSelection.cs" Line="20" Column="62" />
+      <File FileName="Assets/Scripts/Car.cs" Line="9" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="3DCarGame" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="CarController.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="CarSelection.cs" selected="True" />
             </Node>
           </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="3DCarGame" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="926f5364-6587-47d2-861e-9bae9d501dc8" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c7fb35ee-1a07-40ae-8326-d37884c21162" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

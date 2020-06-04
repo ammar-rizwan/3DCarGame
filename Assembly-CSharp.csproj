@@ -136,6 +136,7 @@
     <Compile Include="Assets\RealisticCarControllerV3\Scripts\RCC_XRToggle.cs" />
     <Compile Include="Assets\Scripts\awakeManager.cs" />
     <Compile Include="Assets\Scripts\CameraFollowController.cs" />
+    <Compile Include="Assets\Scripts\Car.cs" />
     <Compile Include="Assets\Scripts\CarController.cs" />
     <Compile Include="Assets\Scripts\CarRaycaster.cs" />
     <Compile Include="Assets\Scripts\destoryScript.cs" />
