@@ -12,14 +12,18 @@ public class CarSelection : MonoBehaviour
     public GameObject selectB;
     public GameObject lockImg;
     private int currentCar;
-    
+    public Text MoneyTxt;
+    public Text price;
+
     private void Awake()
     {
         SelectCar(0);
-        PlayerPrefs.SetInt("Car2 (UnityEngine.Transform)", 1);
+        MoneyTxt.text=(PlayerPrefs.GetInt("coins")).ToString();
+        /*PlayerPrefs.SetInt("Car2 (UnityEngine.Transform)", 1);
         PlayerPrefs.SetInt("SportCar2 (UnityEngine.Transform)", 1);//unlocked 
         PlayerPrefs.SetInt("Model_Cars_SUV (UnityEngine.Transform)", 0);//locked
         PlayerPrefs.SetInt("Sedan1 (UnityEngine.Transform)", 1);
+*/
 
     }
     private void SelectCar(int _index)
@@ -29,7 +33,37 @@ public class CarSelection : MonoBehaviour
         next.interactable = (_index != transform.childCount-1);
         Debug.Log(transform.GetChild(_index));
         string nme = (transform.GetChild(_index)).ToString();
-        if (PlayerPrefs.GetInt(nme,0)==1)
+        string p = PlayerPrefs.GetString(nme);
+        if (p != null && p.Length > 0)
+        {
+            carClass obj = JsonUtility.FromJson<carClass>(p);
+            price.text = (obj.price).ToString();
+            if (obj.isLocked == false)
+            {
+                lockImg.SetActive(false);
+                selectB.SetActive(true);
+                buyB.SetActive(false);
+            }
+            else
+            {
+                lockImg.SetActive(true);
+                Debug.Log(PlayerPrefs.GetInt("coins"));
+                Debug.Log(obj.price);
+                if (PlayerPrefs.GetInt("coins") >= obj.price)
+                {
+                    buyB.GetComponent<Button>().interactable = true;
+                }
+                else
+                {
+                    buyB.GetComponent<Button>().interactable = false;
+                }
+
+                selectB.SetActive(false);
+                buyB.SetActive(true);
+
+            }
+        }
+/*        if (PlayerPrefs.GetInt(nme,0)==1)
         {
             lockImg.SetActive(false);
             selectB.SetActive(true);
@@ -40,8 +74,8 @@ public class CarSelection : MonoBehaviour
             lockImg.SetActive(true);
             selectB.SetActive(false);
             buyB.SetActive(true);
-
-        }
+            
+        }*/
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(i ==_index);
@@ -65,6 +99,26 @@ public class CarSelection : MonoBehaviour
     }
     public void ClickedBuy()
     {
+        int coins=PlayerPrefs.GetInt("coins");
+        int price=0;
+        string nme= (transform.GetChild(currentCar)).ToString();
+        string p = PlayerPrefs.GetString(nme);
+        if (p != null && p.Length > 0)
+        {
+            carClass obj = JsonUtility.FromJson<carClass>(p);
+
+            price = obj.price;
+            obj.isLocked = false;
+            string json = JsonUtility.ToJson(obj);
+            PlayerPrefs.SetString(nme, json);
+        }
+
+        PlayerPrefs.SetInt("coins",coins-price);
+        MoneyTxt.text = (PlayerPrefs.GetInt("coins")).ToString();
+        lockImg.SetActive(false);
+        selectB.SetActive(true);
+        Debug.Log(PlayerPrefs.GetInt("coins"));
+        buyB.SetActive(false);
 
     }
 }

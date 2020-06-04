@@ -2133,6 +2133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967521937}
   - component: {fileID: 967521938}
+  - component: {fileID: 967521939}
   m_Layer: 0
   m_Name: CarHolder
   m_TagString: Untagged
@@ -2176,6 +2177,20 @@ MonoBehaviour:
   buyB: {fileID: 1506166947}
   selectB: {fileID: 1587274428}
   lockImg: {fileID: 698646713}
+  MoneyTxt: {fileID: 2142556266}
+  price: {fileID: 1705511277}
+--- !u!114 &967521939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967521936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b0ff996a7dc3548bb9bc30364fb6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &995350207
 GameObject:
   m_ObjectHideFlags: 0
