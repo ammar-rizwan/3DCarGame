@@ -102,7 +102,7 @@ aa165095bcf0f4d99594ea33df01c81b UnityEngine.UI.dll:UnityEngine.UI.Slider
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_MobileUIDrag
-fd603770689195d8c21e05ad28422d62 Assembly-CSharp.dll:.CarRaycaster
+1eb7b67e9fdd76ade5425b43b0af0a1f Assembly-CSharp.dll:.CarRaycaster
 5ea994d8ed8b8b57beabc6fe42cac992 Assembly-CSharp.dll:.RCC_AIWaypointsContainer
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_CreateAudioSource
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.awakeManager
@@ -166,7 +166,7 @@ c88c4199b288356ec3eb2f0d85abc619 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 d66a8ef05b10d4172ae87aa5e268bed3 Assembly-CSharp.dll:.TrackManager
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 a4e40cd59743944391a1e9b0b0137b28 Assembly-CSharp.dll:.RCC_PoliceSiren
-e44d2d451f60c3855326d217d403149b Assembly-CSharp.dll:.CarSelection
+4df1b2dd3fa8876e0f4ffba0513a20bc Assembly-CSharp.dll:.CarSelection
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
 447ea3ab738a2ace6d6ee8ab6a98243b Assembly-CSharp.dll:.RCC_CinematicCamera
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
@@ -186,6 +186,7 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Initialize
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_HoodCamera
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_GetBounds
 db5a725e0e2e7fa817c3292adafb6269 Assembly-CSharp.dll:.RCC_Recorder
@@ -240,6 +241,6 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 6346786c2af049db4ad0af7d9015f696 Assembly-CSharp.dll:.RCC_DashboardInputs
 9dac16f3efc511835ac976dfae55f580 Assembly-CSharp.dll:.VariableJoystick
-0114ff43d59c1d2f4a07d6b8cb3ad2bf Assembly-CSharp.dll:.GameManager
+8b849d7af76b2dcc53deb23e39ac476d Assembly-CSharp.dll:.GameManager
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_LevelLoader
 ba498371cb115a3a2aecaa34641eb2e8 Assembly-CSharp.dll:.OpponentCarGenerator

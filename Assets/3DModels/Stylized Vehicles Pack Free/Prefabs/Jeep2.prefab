@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2553164322775133249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.27, z: -0.23}
+  m_LocalPosition: {x: 0, y: -0.46, z: 0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8865956996324639457}
@@ -103,7 +103,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2986619863647486501}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 90000
     damper: 9000
@@ -164,7 +164,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3140228436035550165}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 90000
     damper: 9000
@@ -259,7 +259,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4831669479273635511}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 90000
     damper: 9000
@@ -320,7 +320,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8425339713088378257}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_SuspensionSpring:
     spring: 90000
     damper: 9000
@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 4066428265992386051}
   - component: {fileID: 4174075438432313899}
   - component: {fileID: 1396820525}
+  - component: {fileID: 114357504425637648}
   m_Layer: 0
   m_Name: Jeep2
   m_TagString: Player
@@ -370,8 +371,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8865956996324941505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalPosition: {x: 0, y: 0, z: 0.118}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 8865956996324639463}
   - {fileID: 8865956996324639481}
@@ -442,9 +443,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   CenterofMass: {fileID: 0}
   KPH: 0
-  MotorSpeed: 250
-  DownForceValue: 50
-  radius: 2
+  MotorSpeed: 200
+  DownForceValue: 100
+  radius: 5
   brakePower: 500
   wheelsRPM: 0
   gears: []
@@ -452,6 +453,7 @@ MonoBehaviour:
   gearNum: 1
   gameUI: {fileID: 0}
   distanceTravelled: 0
+  gameOverText: {fileID: 0}
 --- !u!114 &1396820525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,6 +469,24 @@ MonoBehaviour:
   vertical: 0
   horizontal: 0
   Brake: 0
+--- !u!114 &114357504425637648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865956996324941505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ce38a26037547deb19447dd9e9ccd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 0}
+  game: {fileID: 0}
+  RR: {fileID: 0}
+  nearMisses: 0
+  speed: 0
 --- !u!1 &8865956996324941509
 GameObject:
   m_ObjectHideFlags: 0

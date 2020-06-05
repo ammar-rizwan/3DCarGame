@@ -8,31 +8,102 @@ public class CarRaycaster : MonoBehaviour
     float radius = 1f;
     bool DidRightHit = false, DidLeftHit = false;
     RaycastHit raycastHit;
-    int score = 0;
+    public float score = 0;
     public Text scoreText;
-    // Update is called once per frame
-    void FixedUpdate()
+
+	public GameObject game;
+
+	public CarController RR;
+
+	string currentTrafficCarNameLeft, currentTrafficCarNameRight;
+	public int nearMisses;
+	internal float timeLeft = 100f;
+	internal int combo;
+	internal int maxCombo;
+	private float comboTime;
+
+	public float speed;
+
+    private void Start()
     {
-        Ray RightRay = new Ray(transform.position, transform.TransformDirection(Vector3.right));
-        Ray LeftRay = new Ray(transform.position, transform.TransformDirection(Vector3.left));
-
-        DidRightHit = Physics.SphereCast(RightRay, radius, out raycastHit, 50);
-        DidLeftHit = Physics.SphereCast(LeftRay, radius, out raycastHit, 50);
-
-        //Debug.Log(DidHit);
-
-        if (DidRightHit || DidLeftHit)
-        {
-            if (raycastHit.collider.tag == "Opponent")
-            {
-                score++;
-                scoreText.text = score.ToString();
-            }
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * 50, Color.yellow);
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.left) * 50, Color.yellow);
-        }
+        RR = gameObject.GetComponent<CarController>();
+		scoreText = GameObject.Find("GameUILabel").transform.GetChild(0).gameObject.GetComponentsInChildren<Text>()[1];
+	}
+	// Update is called once per frame
+	void FixedUpdate()
+	{
+		speed = RR.KPH;
+        CheckNearMiss();
     }
+
+	void CheckNearMiss()
+	{
+	RaycastHit hit;
+
+		Debug.DrawRay(transform.position, (-transform.right * 1.2f), Color.white);
+		Debug.DrawRay(transform.position, (transform.right * 1.2f), Color.white);
+		Debug.DrawRay(transform.position, (transform.forward * 10f), Color.white);
+
+		if (Physics.Raycast(transform.position, (-transform.right), out hit, 2f) && !hit.collider.isTrigger)
+		{
+			currentTrafficCarNameLeft = hit.transform.name;
+		}
+		else
+		{
+
+			if (currentTrafficCarNameLeft != null && speed >30)
+			{
+
+				nearMisses++;
+				combo++;
+				comboTime = 0;
+				if (maxCombo <= combo)
+					maxCombo = combo;
+
+				score += 100f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				scoreText.text = nearMisses.ToString();
+				currentTrafficCarNameLeft = null;
+
+			}
+			else
+			{
+
+				currentTrafficCarNameLeft = null;
+
+			}
+
+		}
+
+
+		if (Physics.Raycast(transform.position, (transform.right), out hit, 2f) && !hit.collider.isTrigger)
+		{
+			currentTrafficCarNameRight = hit.transform.name;
+		}
+		else
+		{
+
+			if (currentTrafficCarNameRight != null && speed > 30)
+			{
+
+				nearMisses++;
+				combo++;
+				comboTime = 0;
+				if (maxCombo <= combo)
+					maxCombo = combo;
+
+				score += 100f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+
+				currentTrafficCarNameRight = null;
+
+			}
+			else
+			{
+
+				currentTrafficCarNameRight = null;
+
+			}
+
+		}
+	}
+
 }

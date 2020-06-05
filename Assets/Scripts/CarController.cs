@@ -78,10 +78,15 @@ public class CarController : MonoBehaviour
     private void steerVehicle()
     {
 
+        float angle = 15 * IM.horizontal;
+        wheels[0].steerAngle = angle;
+        wheels[1].steerAngle = angle;
+
+
+        //rigidbody.velocity = new Vector3(IM.horizontal * 5, 0f, IM.vertical*20);
+
 
         //acerman steering formula
-        //steerAngle = Mathf.Rad2Deg * Mathf.Atan(2.55f / (radius + (1.5f / 2))) * horizontalInput;
-
         if (IM.horizontal > 0)
         {
             //rear tracks size is set to 1.5f       wheel base has been set to 2.55f
@@ -100,7 +105,6 @@ public class CarController : MonoBehaviour
             wheels[0].steerAngle = 0;
             wheels[1].steerAngle = 0;
         }
-
     }
     void animatedWheels()
     {
@@ -166,6 +170,8 @@ public class CarController : MonoBehaviour
 
            gameOverText.text = "Game Over!";
             gameUI.transform.GetChild(0).gameObject.SetActive(true);
+            gameUI.transform.GetChild(1).gameObject.SetActive(true);
+
             gameObject.SetActive(false);
         }
     }

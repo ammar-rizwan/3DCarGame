@@ -15,15 +15,24 @@ public class CarSelection : MonoBehaviour
     public Text MoneyTxt;
     public Text price;
 
+    public Text Selected;
+    public int SelectedCarInt;
     private void Awake()
     {
-        SelectCar(0);
         MoneyTxt.text=(PlayerPrefs.GetInt("coins")).ToString();
+
+        if (PlayerPrefs.HasKey("currentCar"))
+            SelectedCarInt = PlayerPrefs.GetInt("currentCar", currentCar);
+        else
+            SelectedCarInt = 0;
+
+        print(SelectedCarInt);
+        SelectCar(0);
         /*PlayerPrefs.SetInt("Car2 (UnityEngine.Transform)", 1);
         PlayerPrefs.SetInt("SportCar2 (UnityEngine.Transform)", 1);//unlocked 
         PlayerPrefs.SetInt("Model_Cars_SUV (UnityEngine.Transform)", 0);//locked
         PlayerPrefs.SetInt("Sedan1 (UnityEngine.Transform)", 1);
-*/
+        */
 
     }
     private void SelectCar(int _index)
@@ -40,15 +49,25 @@ public class CarSelection : MonoBehaviour
             price.text = (obj.price).ToString();
             if (obj.isLocked == false)
             {
+
                 lockImg.SetActive(false);
-                selectB.SetActive(true);
                 buyB.SetActive(false);
+
+                if (obj.CarID == SelectedCarInt)
+                {
+                    Selected.gameObject.SetActive(true);
+                    selectB.SetActive(false);
+                }
+                else
+                {
+                selectB.SetActive(true);
+                    Selected.gameObject.SetActive(false);
+                }
             }
             else
             {
+                Selected.gameObject.SetActive(false);
                 lockImg.SetActive(true);
-                Debug.Log(PlayerPrefs.GetInt("coins"));
-                Debug.Log(obj.price);
                 if (PlayerPrefs.GetInt("coins") >= obj.price)
                 {
                     buyB.GetComponent<Button>().interactable = true;
@@ -91,12 +110,11 @@ public class CarSelection : MonoBehaviour
     }
     public void ClickedSelect()
     {
-        //PlayerPrefs.SetString("currentCar", transform.GetChild(currentCar).ToString());
         PlayerPrefs.SetInt("currentCar", currentCar);
-        Debug.Log("car selected==>" + PlayerPrefs.GetInt("currentCar"));
-        SceneManager.LoadScene(1);
-
+        SelectedCarInt = currentCar;
+        SelectCar(SelectedCarInt);
     }
+
     public void ClickedBuy()
     {
         int coins=PlayerPrefs.GetInt("coins");
@@ -120,5 +138,10 @@ public class CarSelection : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt("coins"));
         buyB.SetActive(false);
 
+    }
+
+    public void PlayButtonClick()
+    {
+        SceneManager.LoadScene(1);
     }
 }

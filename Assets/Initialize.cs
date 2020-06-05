@@ -6,7 +6,7 @@ public class Initialize : MonoBehaviour
 {
     void Awake()
     {
-        int chk= PlayerPrefs.GetInt("chk", 0);
+        int chk = PlayerPrefs.GetInt("chk", 0);
         if (chk == 0)
         {
             PlayerPrefs.SetInt("chk", 1);
@@ -16,6 +16,7 @@ public class Initialize : MonoBehaviour
                 carClass obj = new carClass();
                 obj.topSpeed = 100;
                 obj.price = 1000;
+                obj.CarID = i;
                 if (i != 0)
                 {
                     obj.isLocked = true;

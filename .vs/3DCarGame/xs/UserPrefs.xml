@@ -1,20 +1,19 @@
 ﻿<Properties StartupConfiguration="{7C091928-F702-DA4A-BBAC-6A74FBB7D9C3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/CarSelection.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CarRaycaster.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameManager.cs" Line="32" Column="1" />
-      <File FileName="Assets/Scripts/EnemyCarDriver.cs" />
-      <File FileName="Assets/Scripts/OpponentCarGenerator.cs" />
-      <File FileName="Assets/Scripts/OpponentCarGenerator1.cs" />
-      <File FileName="Assets/CarSelection.cs" Line="20" Column="62" />
-      <File FileName="Assets/Scripts/Car.cs" Line="9" Column="24" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="34" Column="12" />
+      <File FileName="Assets/Scripts/InputManager.cs" />
+      <File FileName="Assets/Scripts/CarRaycaster.cs" Line="28" Column="6" />
+      <File FileName="Assets/Scripts/CarController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="3DCarGame" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True" />
-              <Node name="CarSelection.cs" selected="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="CarRaycaster.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -23,7 +22,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c7fb35ee-1a07-40ae-8326-d37884c21162" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="eea875c9-1d06-4010-af6b-107fdea47f09" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

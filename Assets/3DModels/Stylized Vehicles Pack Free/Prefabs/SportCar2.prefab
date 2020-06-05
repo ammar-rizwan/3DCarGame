@@ -73,12 +73,12 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469247613282035746}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 2.3
+  m_Radius: 2
   m_SuspensionSpring:
     spring: 90000
     damper: 9000
     targetPosition: 1
-  m_SuspensionDistance: 1.5
+  m_SuspensionDistance: 2
   m_ForceAppPointDistance: 0
   m_Mass: 500
   m_WheelDampingRate: 1
@@ -119,7 +119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473030455586787482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.46, z: 0.34}
+  m_LocalPosition: {x: 0, y: -0.46, z: 0.229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1894404873762034047}
@@ -758,6 +758,7 @@ GameObject:
   - component: {fileID: 3681650007233846178}
   - component: {fileID: 801075710224149823}
   - component: {fileID: 242759240}
+  - component: {fileID: 792270558058821833}
   m_Layer: 0
   m_Name: SportCar2
   m_TagString: Player
@@ -774,7 +775,7 @@ Transform:
   m_GameObject: {fileID: 1894404873762196831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.29, y: -1.61, z: -7.68}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
   m_Children:
   - {fileID: 1894404873762034043}
   - {fileID: 1894404873762034041}
@@ -813,8 +814,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.8137624, y: 1.1988668, z: 5.4813333}
-  m_Center: {x: 0.0054284334, y: 0.09943342, z: 0.6060331}
+  m_Size: {x: 2.8137624, y: 1.5111408, z: 5.85464}
+  m_Center: {x: 0.005428493, y: 0.08328584, z: 0.41937962}
 --- !u!114 &801075710224149823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,9 +846,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   CenterofMass: {fileID: 0}
   KPH: 0
-  MotorSpeed: 250
+  MotorSpeed: 300
   DownForceValue: 50
-  radius: 5
+  radius: 6
   brakePower: 500
   wheelsRPM: 0
   gears: []
@@ -855,6 +856,7 @@ MonoBehaviour:
   gearNum: 1
   gameUI: {fileID: 0}
   distanceTravelled: 0
+  gameOverText: {fileID: 0}
 --- !u!114 &242759240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,6 +872,24 @@ MonoBehaviour:
   vertical: 0
   horizontal: 0
   Brake: 0
+--- !u!114 &792270558058821833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894404873762196831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ce38a26037547deb19447dd9e9ccd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 0}
+  game: {fileID: 0}
+  RR: {fileID: 0}
+  nearMisses: 0
+  speed: 0
 --- !u!1 &2491843405877138550
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,12 +929,12 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2491843405877138550}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 2.3
+  m_Radius: 2
   m_SuspensionSpring:
     spring: 90000
     damper: 9000
     targetPosition: 1
-  m_SuspensionDistance: 1.5
+  m_SuspensionDistance: 1
   m_ForceAppPointDistance: 0
   m_Mass: 500
   m_WheelDampingRate: 1
@@ -1004,7 +1024,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6021662049601206486}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 2.3
+  m_Radius: 2
   m_SuspensionSpring:
     spring: 90000
     damper: 9000
@@ -1065,12 +1085,12 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8477586692042260667}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 2.3
+  m_Radius: 2
   m_SuspensionSpring:
     spring: 90000
     damper: 9000
     targetPosition: 1
-  m_SuspensionDistance: 1.5
+  m_SuspensionDistance: 2
   m_ForceAppPointDistance: 0
   m_Mass: 500
   m_WheelDampingRate: 1

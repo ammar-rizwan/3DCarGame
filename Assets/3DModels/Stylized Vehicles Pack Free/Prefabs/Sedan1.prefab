@@ -146,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2890884534615367216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.347, z: -0.594}
+  m_LocalPosition: {x: 0, y: -0.151, z: -0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5686074402418494594}
@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 114374514521145804}
   - component: {fileID: 8602525477631679477}
   - component: {fileID: 7679877994846874439}
+  - component: {fileID: 7248777495042351573}
   m_Layer: 0
   m_Name: Sedan1
   m_TagString: Player
@@ -260,7 +261,7 @@ Transform:
   m_GameObject: {fileID: 5686074402418921634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.33, y: -1.56, z: -15.35}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 5686074402418494596}
   - {fileID: 5686074402418494618}
@@ -320,7 +321,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   CenterofMass: {fileID: 0}
   KPH: 0
-  MotorSpeed: 100
+  MotorSpeed: 200
   DownForceValue: 50
   radius: 6
   brakePower: 500
@@ -330,6 +331,7 @@ MonoBehaviour:
   gearNum: 1
   gameUI: {fileID: 0}
   distanceTravelled: 0
+  gameOverText: {fileID: 0}
 --- !u!65 &8602525477631679477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -358,6 +360,24 @@ MonoBehaviour:
   vertical: 0
   horizontal: 0
   Brake: 0
+--- !u!114 &7248777495042351573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5686074402418921634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ce38a26037547deb19447dd9e9ccd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 0}
+  game: {fileID: 0}
+  RR: {fileID: 0}
+  nearMisses: 0
+  speed: 0
 --- !u!1 &5686074402418921636
 GameObject:
   m_ObjectHideFlags: 0
