@@ -29,7 +29,7 @@ public class Initialize : MonoBehaviour
                 PlayerPrefs.SetString(temp, json);
 
             }
-            PlayerPrefs.SetInt("coins",2222);
+            PlayerPrefs.SetInt("coins",4500);
 
         }
     }

@@ -8,20 +8,39 @@ public class OpponentCarGenerator : MonoBehaviour
     
 	public Transform objectToFollow;
     public Vector3 offset= new Vector3(0f,0f,20f);
+    int gameMode;
     // Start is called before the first frame update
     void Start()
     {
-     InvokeRepeating("GenerateRandomObstacle",1f,1.5f);
-        objectToFollow = GameObject.FindGameObjectWithTag("Player").transform;
 
+        objectToFollow = GameObject.FindGameObjectWithTag("Player").transform;
+        gameMode = PlayerPrefs.GetInt("level");
+        if (gameMode == 1)
+        {
+            InvokeRepeating("GenerateTraffic", 2f, 1.3f);
+
+        }
+        else if (gameMode == 2)
+        {
+            InvokeRepeating("GenerateTraffic", 2f, 1.3f);
+            InvokeRepeating("GenerateWrongWayTraffic", 2f, 1.3f);
+
+        }
+        else
+        {
+            Debug.Log("Error");
+        }
     }
 
     // Update is called once per frame
-    private void GenerateRandomObstacle(){
-            float number =Random.Range(0f,-2.5f);
-        
+    private void GenerateTraffic(){
+        float number = Random.Range(2,3);
             Instantiate(oppoCar,new Vector3(number,0f,transform.position.z),Quaternion.Euler(0f,180f,0f)); 
     
+    }
+    private void GenerateWrongWayTraffic()
+    {
+
     }
     void FixedUpdate()
     {

@@ -143,6 +143,7 @@
     <Compile Include="Assets\Scripts\CarRaycaster.cs" />
     <Compile Include="Assets\Scripts\destoryScript.cs" />
     <Compile Include="Assets\Scripts\EnemyCarDriver.cs" />
+    <Compile Include="Assets\Scripts\GameLevelManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\OpponentCarDestory.cs" />

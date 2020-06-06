@@ -4,27 +4,61 @@ using UnityEngine;
 
 public class OpponentCarGenerator1 : MonoBehaviour
 {
+     float[] Lanes = new float[4];
+
     public GameObject oppoCar;
 
     public Transform objectToFollow;
     public float number;
     public Vector3 offset = new Vector3(0f, 0f, 20f);
-    // Start is called before the first frame update
+    int gameMode;
     void Start()
     {
-        InvokeRepeating("GenerateRandomObstacle", 1f, 1.2f);
-        objectToFollow = GameObject.FindGameObjectWithTag("Player").transform;
 
+        objectToFollow = GameObject.FindGameObjectWithTag("Player").transform;
+        gameMode = PlayerPrefs.GetInt("level");
+        Lanes[0] = -2.5f;
+        Lanes[1] = -1f;
+        Lanes[2] = 1f;
+        Lanes[3] = 2.5f;
+
+        if (gameMode == 1)
+        {
+            InvokeRepeating("GenerateTraffic", 2f, 1.3f);
+            InvokeRepeating("GenerateTraffic", 6f, 2f);
+
+
+        }
+        else if (gameMode == 2)
+        {
+            InvokeRepeating("GenerateTraffic", 2f, 1.2f);
+            InvokeRepeating("GenerateWrongWayTraffic", 2f, 1.5f);
+        }
+        else
+        {
+            Debug.Log("Error");
+        }
     }
 
-    // Update is called once per frame
-    private void GenerateRandomObstacle()
+
+    private void GenerateTraffic()
     {
-        //float number = Random.Range(0f, 2.5f);
+        int number =0;
+        if (gameMode == 1)
+            number = Random.Range(0, 4);
+        else if (gameMode == 2)
+            number = Random.Range(2, 4);
 
-        number = Random.Range(2.3f,- 2.3f);
+        Debug.Log("Number "+number);
 
-        Instantiate(oppoCar, new Vector3(number, 0f, transform.position.z), Quaternion.Euler(0f, 0f, 0f));
+        Instantiate(oppoCar, new Vector3(Lanes[number], 0f, transform.position.z), Quaternion.Euler(0f, 0f, 0f));
+
+    }
+    private void GenerateWrongWayTraffic()
+    {
+        int number1 = Random.Range(0,2);
+
+        Instantiate(oppoCar, new Vector3(Lanes[number1], 0f, transform.position.z), Quaternion.Euler(0f, 180f, 0f));
 
     }
     void FixedUpdate()

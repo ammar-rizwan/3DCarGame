@@ -3,6 +3,7 @@ PlayerPath?
 /Users/shtech/Desktop/Game Programming/3DCarGame/carGame.apk
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
+Assets/Scenes/MenuScene.unity
 Assets/Scenes/GameScene.unity
 SceneListEnd?
 ce669872a2be11bc686ea22961d8a3bb Assembly-CSharp.dll:.Joystick
@@ -172,6 +173,7 @@ a4e40cd59743944391a1e9b0b0137b28 Assembly-CSharp.dll:.RCC_PoliceSiren
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 6d12be8d04084d111b117f3e59a966a5 Assembly-CSharp.dll:.RCC_FuelStation
 c7fc447632fdf5feff363a928333a8fe Assembly-CSharp.dll:.RCC_Demo
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GameLevelManager
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
