@@ -10,8 +10,16 @@ public class EnemyCarDriver : MonoBehaviour
  public Transform frontRightT,frontLeftT;
  public Transform rearRightT,rearLeftT;
  public float motorForce = 60;
+public GameObject COM ;
+public Rigidbody rigidbody;
 
+public void Start(){
+        rigidbody = GetComponent<Rigidbody>();
 
+        COM = GameObject.Find("COM");
+        rigidbody.centerOfMass = COM.transform.localPosition;
+    
+}
 public void Accelerate(){
     frontLeftW.motorTorque = 1f * motorForce;
     frontRightW.motorTorque = 1f * motorForce;

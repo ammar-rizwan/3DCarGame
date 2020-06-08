@@ -43,7 +43,7 @@ public class CarController : MonoBehaviour
     {
         getObject();
         lastPosition = transform.position;
-        gameUI = GameObject.FindGameObjectWithTag("UITag");
+        // gameUI = GameObject.FindGameObjectsWithTag("UITag")[1];
 
     }
 
@@ -166,13 +166,14 @@ public class CarController : MonoBehaviour
     {
         if(collision.collider.tag == "Opponent")
         {
-           gameOverText = gameUI.gameObject.GetComponent<Text>();
+        //    gameOverText = gameUI.gameObject.GetComponent<Text>();
 
-           gameOverText.text = "Game Over!";
-            gameUI.transform.GetChild(0).gameObject.SetActive(true);
-            gameUI.transform.GetChild(1).gameObject.SetActive(true);
-
-            gameObject.SetActive(false);
+        //    gameOverText.text = "Game Over!";
+        //     gameUI.transform.GetChild(0).gameObject.SetActive(true);
+        //     gameUI.transform.GetChild(1).gameObject.SetActive(true);
+    // gameUI.gameObject.SetActive(true);
+    //         gameObject.SetActive(false);
+    gameObject.SetActive(false);
         }
     }
 

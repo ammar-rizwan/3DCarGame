@@ -7,35 +7,64 @@ public class GameManager : MonoBehaviour
 {
 
     public CarController RR;
-    public GameObject neeedle;
+    public CarRaycaster CR;
+    public GameObject[] Cars;
+    private string currentTime;
+    public float vehicleSpeed;
+
+
+    public GameObject GamePlayUI;
     public Text TimeText;
     public Text ScoreText;
     public Text SpeedText;
     public Text DistanceText;
-    //public Text ScoreText;
+
+
+    public GameObject GameOverUI;
+    public Text TotalDistanceText;
+    public Text TotalDistanceMoney;
+    public Text NearMissText;
+    public Text NearMissMoney;
+    public Text CashCollectedText;
+    public Text CashCollectedMoney;
+
+
+
     public Sprite PauseSprite;
-    public Sprite PlaySprite;
+    public Sprite PlaySprite;    
 
-    public GameObject[] Cars;
-    private string currentTime;
+    public Material Day;
+    public Material Night;
 
-    private float startPosiziton = 220f, endPosition = -40f;
-    private float desiredPosition;
-    public float vehicleSpeed;
+    public Text TotalScore;
+    private bool isDaySelected;
 
-    public GameObject gameUI;
-    public Text gameOverText;
+    // private float startPosiziton = 220f, endPosition = -40f;
+    // private float desiredPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        isDaySelected =(PlayerPrefs.GetInt("daySelected") == 1) ? true:false; 
+        if(isDaySelected){
+            RenderSettings.skybox = Day;
+        }else{
+            RenderSettings.skybox = Night;
+    }
+
+
         int temp = PlayerPrefs.GetInt("currentCar");
-        //int temp = 3;
+        // int temp = 3;
         Instantiate(Cars[temp], new Vector3(0f, 0.5f, -23f), Quaternion.Euler(0f, 0f, 0f));
         RR = GameObject.FindGameObjectWithTag("Player").GetComponent<CarController>();
+        CR = GameObject.FindGameObjectWithTag("Player").GetComponent<CarRaycaster>();
 
-        gameUI = GameObject.FindGameObjectWithTag("UITag");
-        gameOverText = gameUI.gameObject.GetComponent<Text>();
+        // GamePlayUI = GameObject.FindGameObjectsWithTag("UITag")[0];
+        // GameOverUI = GameObject.FindGameObjectsWithTag("UITag")[1];
+         
+
+        GameOverUI.gameObject.SetActive(false);
+        // gameOverText = gameUI.gameObject.GetComponent<Text>();
 
     }
 
@@ -43,9 +72,18 @@ public class GameManager : MonoBehaviour
     void FixedUpdate()
     {
         vehicleSpeed = RR.KPH;
-        updateNeedle();
         if(RR.gameObject.active == false)
         {
+            GameOverUI.gameObject.SetActive(true);
+            GamePlayUI.gameObject.SetActive(false);
+
+            TotalDistanceText.text = (RR.distanceTravelled/1000).ToString("f2");
+            TotalDistanceMoney.text = "$"+(RR.distanceTravelled/1000)*10;
+            NearMissText.text = CR.nearMisses.ToString();
+            NearMissMoney.text = (CR.nearMisses*10).ToString();
+            TotalScore.text = CR.score.ToString("f1");
+
+
             return;
         }
 
@@ -54,13 +92,13 @@ public class GameManager : MonoBehaviour
         SpeedText.text = vehicleSpeed.ToString("f1")+"KM/H";
         DistanceText.text = (RR.distanceTravelled/1000).ToString("f2") + "Kms";
     }
-    public void updateNeedle()
-    {
-        desiredPosition = startPosiziton - endPosition;
-        float temp = vehicleSpeed/ 180;
-        neeedle.transform.eulerAngles = new Vector3(0, 0, (startPosiziton - temp * desiredPosition));
-        //Debug.Log((startPosiziton - temp * desiredPosition));
-    }
+    // public void updateNeedle()
+    // {
+    //     desiredPosition = startPosiziton - endPosition;
+    //     float temp = vehicleSpeed/ 180;
+    //     neeedle.transform.eulerAngles = new Vector3(0, 0, (startPosiziton - temp * desiredPosition));
+    //     //Debug.Log((startPosiziton - temp * desiredPosition));
+    // }
 
     public void PToggle(Button button)
     {
@@ -69,15 +107,15 @@ public class GameManager : MonoBehaviour
             button.GetComponent<Image>().sprite = PlaySprite;
             Time.timeScale = 0;
 
-            gameUI.transform.GetChild(0).gameObject.SetActive(true);
-            gameUI.transform.GetChild(1).gameObject.SetActive(true);
+            // gameUI.transform.GetChild(0).gameObject.SetActive(true);
+            // gameUI.transform.GetChild(1).gameObject.SetActive(true);
             return;
         }
         else
         {
             button.GetComponent<Image>().sprite = PauseSprite;
-            gameUI.transform.GetChild(0).gameObject.SetActive(false);
-            gameUI.transform.GetChild(1).gameObject.SetActive(false);
+            // gameUI.transform.GetChild(0).gameObject.SetActive(false);
+            // gameUI.transform.GetChild(1).gameObject.SetActive(false);
 
             Time.timeScale = 1;
 
@@ -85,12 +123,23 @@ public class GameManager : MonoBehaviour
     }
     public void OnRestarButtonClick()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     public void OnMainMenuButton()
     {
         SceneManager.LoadScene(0);
     }
+
+    public void onChnageController(){
+        if(PlayerPrefs.GetInt("tilt")==1){
+            PlayerPrefs.SetInt("tilt",0);
+
+        }else{
+            PlayerPrefs.SetInt("tilt",1);
+
+        }
+    }
+
 
 
 }

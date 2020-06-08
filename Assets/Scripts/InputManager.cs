@@ -12,10 +12,16 @@ public class InputManager:MonoBehaviour
 
     private void FixedUpdate()
     {
-        //vertical = CrossPlatformInputManager.GetAxis("Vertical");
         vertical = 1f;
-        horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
         Brake = (Input.GetAxis("Jump")!=0) ? true : false;
+
+        if(PlayerPrefs.GetInt("tilt")==1){
+            horizontal = Input.acceleration.x;
+
+        }else{
+           horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+        }
+        //vertical = CrossPlatformInputManager.GetAxis("Vertical");
     }
 
 }

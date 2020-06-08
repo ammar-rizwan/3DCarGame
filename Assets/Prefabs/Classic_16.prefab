@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2122298516}
   m_Layer: 0
-  m_Name: mass
+  m_Name: COM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2122,7 +2122,6 @@ GameObject:
   - component: {fileID: 1470817990}
   - component: {fileID: 1470817989}
   - component: {fileID: 7752492298961319740}
-  - component: {fileID: 1062577282935801109}
   - component: {fileID: 1433283902}
   m_Layer: 0
   m_Name: Classic_16
@@ -2210,19 +2209,6 @@ MonoBehaviour:
   vertical: 0
   horizontal: 0
   Brake: 0
---- !u!114 &1062577282935801109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5403024272172579134}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ce38a26037547deb19447dd9e9ccd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
 --- !u!114 &1433283902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2243,7 +2229,9 @@ MonoBehaviour:
   frontLeftT: {fileID: 8743602959024528659}
   rearRightT: {fileID: 3547894815510343651}
   rearLeftT: {fileID: 8424207585664130522}
-  motorForce: 50
+  motorForce: 250
+  COM: {fileID: 0}
+  rigidbody: {fileID: 0}
 --- !u!1 &5403024272172579166
 GameObject:
   m_ObjectHideFlags: 0

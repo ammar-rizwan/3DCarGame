@@ -27,7 +27,7 @@ public class CarRaycaster : MonoBehaviour
     private void Start()
     {
         RR = gameObject.GetComponent<CarController>();
-		scoreText = GameObject.Find("GameUILabel").transform.GetChild(0).gameObject.GetComponentsInChildren<Text>()[1];
+		scoreText = GameObject.Find("GamePlayUI").transform.GetChild(0).gameObject.GetComponentsInChildren<Text>()[1];
 	}
 	// Update is called once per frame
 	void FixedUpdate()
@@ -44,7 +44,7 @@ public class CarRaycaster : MonoBehaviour
 		Debug.DrawRay(transform.position, (transform.right * 1.2f), Color.white);
 		Debug.DrawRay(transform.position, (transform.forward * 10f), Color.white);
 
-		if (Physics.Raycast(transform.position, (-transform.right), out hit, 2f) && !hit.collider.isTrigger)
+		if (Physics.Raycast(transform.position, (-transform.right), out hit,1.2f) && !hit.collider.isTrigger)
 		{
 			currentTrafficCarNameLeft = hit.transform.name;
 		}
@@ -60,8 +60,8 @@ public class CarRaycaster : MonoBehaviour
 				if (maxCombo <= combo)
 					maxCombo = combo;
 
-				score += 100f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
-				scoreText.text = nearMisses.ToString();
+				score += 10f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				scoreText.text = score.ToString();
 				currentTrafficCarNameLeft = null;
 
 			}
@@ -75,7 +75,7 @@ public class CarRaycaster : MonoBehaviour
 		}
 
 
-		if (Physics.Raycast(transform.position, (transform.right), out hit, 2f) && !hit.collider.isTrigger)
+		if (Physics.Raycast(transform.position, (transform.right), out hit,1.2f) && !hit.collider.isTrigger)
 		{
 			currentTrafficCarNameRight = hit.transform.name;
 		}
@@ -91,7 +91,8 @@ public class CarRaycaster : MonoBehaviour
 				if (maxCombo <= combo)
 					maxCombo = combo;
 
-				score += 100f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				score += 10f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				scoreText.text = score.ToString();
 
 				currentTrafficCarNameRight = null;
 

@@ -7,6 +7,7 @@ public class OpponentCarGenerator1 : MonoBehaviour
      float[] Lanes = new float[4];
 
     public GameObject oppoCar;
+    public GameObject [] opponentCar;
 
     public Transform objectToFollow;
     public float number;
@@ -27,7 +28,6 @@ public class OpponentCarGenerator1 : MonoBehaviour
             InvokeRepeating("GenerateTraffic", 2f, 1.3f);
             InvokeRepeating("GenerateTraffic", 6f, 2f);
 
-
         }
         else if (gameMode == 2)
         {
@@ -36,6 +36,9 @@ public class OpponentCarGenerator1 : MonoBehaviour
         }
         else
         {
+                     InvokeRepeating("GenerateTraffic", 2f, 1.3f);
+            InvokeRepeating("GenerateTraffic", 6f, 2f);
+   
             Debug.Log("Error");
         }
     }
@@ -49,16 +52,18 @@ public class OpponentCarGenerator1 : MonoBehaviour
         else if (gameMode == 2)
             number = Random.Range(2, 4);
 
+        int ramdomcar = Random.Range(0,5);
         Debug.Log("Number "+number);
 
-        Instantiate(oppoCar, new Vector3(Lanes[number], 0f, transform.position.z), Quaternion.Euler(0f, 0f, 0f));
+        Instantiate(opponentCar[ramdomcar], new Vector3(Lanes[number], 0f, transform.position.z), Quaternion.Euler(0f, 0f, 0f));
 
     }
     private void GenerateWrongWayTraffic()
     {
         int number1 = Random.Range(0,2);
+        int ramdomcar = Random.Range(0,5);
 
-        Instantiate(oppoCar, new Vector3(Lanes[number1], 0f, transform.position.z), Quaternion.Euler(0f, 180f, 0f));
+        Instantiate(opponentCar[ramdomcar], new Vector3(Lanes[number1], 0f, transform.position.z), Quaternion.Euler(0f, 180f, 0f));
 
     }
     void FixedUpdate()

@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollowController : MonoBehaviour {
-   
+   public int currentCamera ;
+
     private void Start()
     {
+		currentCamera = 1;
+			offset = new Vector3(0f,2f,-2.5f);
+
 		objectToFollow = GameObject.FindGameObjectWithTag("Player").transform;
 
 	}
@@ -27,20 +31,20 @@ public class CameraFollowController : MonoBehaviour {
 		transform.position = Vector3.Lerp(transform.position, _targetPos, followSpeed * Time.deltaTime);
 		
 	}
+	public void changeCarAngle(){
+		currentCamera++;
+		if(currentCamera>2)
+			currentCamera=1;
+		
+		if(currentCamera==1){
+			offset = new Vector3(0f,2f,-2.5f);
+		}
+		else if(currentCamera ==2){
+			offset = new Vector3(0f,0.5f,-0.5f);
 
-	void TOP(){
-
-		transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(30f, 0f, 0f), Time.deltaTime * 2f);
-
-		Vector3 targetPosition = new Vector3(0f, objectToFollow.position.y, objectToFollow.position.z);
-		targetPosition -= transform.rotation * Vector3.forward * 5f;
-		targetPosition = new Vector3(objectToFollow.position.x, 8f, objectToFollow.position.z);
-		// transform.position = SmoothApproach( pastFollowerPosition, pastTargetPosition, targetPosition, (speed / 10f) * Mathf.Clamp(Time.timeSinceLevelLoad - 1.5f, 0f, .85f) );
-		// targetFieldOfView = topFOV;
-		transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
-
-
+		}
 	}
+
 
 	private void FixedUpdate()
 	{
@@ -50,6 +54,9 @@ public class CameraFollowController : MonoBehaviour {
         transform.LookAt(objectToFollow);
 
 	}
+
+
+
 
 
 
