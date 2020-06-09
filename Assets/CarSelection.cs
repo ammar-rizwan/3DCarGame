@@ -35,6 +35,10 @@ public class CarSelection : MonoBehaviour
         */
 
     }
+    void Start()
+    {
+        MoneyTxt.text = (PlayerPrefs.GetInt("coins")).ToString();
+    }
     private void SelectCar(int _index)
     {
 

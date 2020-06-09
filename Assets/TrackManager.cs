@@ -23,7 +23,7 @@ public class TrackManager : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
-        if (playerTransform.position.z -55> zSpawn - (nTrack * trackLength))
+        if (playerTransform.position.z -30> zSpawn - (nTrack * trackLength))
         {
             SpawnTrack1();
             Debug.Log(playerTransform.position.z);

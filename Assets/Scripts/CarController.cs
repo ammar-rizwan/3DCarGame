@@ -24,7 +24,11 @@ public class CarController : MonoBehaviour
     public float[] gears;
     public int gearNum = 1;
     public GameObject gameUI;
-
+    public AudioClip crash;
+    public float topSpeed = 60;
+    //private float currentSpeed = 0;
+    private float pitch = 0;
+    private AudioSource[] audioSource;
     public float distanceTravelled = 0;
     Vector3 lastPosition;
 
@@ -147,7 +151,31 @@ public class CarController : MonoBehaviour
         if(collision.collider.tag == "Opponent")
         {
             gameObject.SetActive(false);
+           
+            AudioSource.PlayClipAtPoint(crash, transform.position, 1.0F);
+            //crash.Play();
+            
+        //    gameOverText = gameUI.gameObject.GetComponent<Text>();
+
+        //    gameOverText.text = "Game Over!";
+        //     gameUI.transform.GetChild(0).gameObject.SetActive(true);
+        //     gameUI.transform.GetChild(1).gameObject.SetActive(true);
+    // gameUI.gameObject.SetActive(true);
+    //         gameObject.SetActive(false);
+    gameObject.SetActive(false);
         }
+    }
+    void Update()
+    {
+        // currentSpeed = transform.GetComponent<Rigidbody>().velocity.magnitude * 3.6f;
+        pitch = KPH / topSpeed;
+
+        audioSource = transform.GetComponents<AudioSource>();
+        foreach (AudioSource item in audioSource)
+        {
+            item.pitch = pitch;
+        }
+
     }
 
 }

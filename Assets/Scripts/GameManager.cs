@@ -171,6 +171,18 @@ public class GameManager : MonoBehaviour
 
         }
     }
+/*    void Update()
+    {
+        // currentSpeed = transform.GetComponent<Rigidbody>().velocity.magnitude * 3.6f;
+        pitch = vehicleSpeed / topSpeed;
+
+        audioSource =transform.GetComponents<AudioSource>();
+        foreach (AudioSource item in audioSource)
+        {
+            item.pitch = pitch;
+        }
+        
+    }*/
 
 
 
