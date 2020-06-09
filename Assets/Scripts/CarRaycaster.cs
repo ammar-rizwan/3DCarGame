@@ -10,8 +10,8 @@ public class CarRaycaster : MonoBehaviour
     RaycastHit raycastHit;
     public float score = 0;
     public Text scoreText;
-
-	public GameObject game;
+    public AudioClip swoosh;
+    public GameObject game;
 
 	public CarController RR;
 
@@ -86,7 +86,8 @@ public class CarRaycaster : MonoBehaviour
 			{
 
 				nearMisses++;
-				combo++;
+                AudioSource.PlayClipAtPoint(swoosh, transform.position, 1.0F);
+                combo++;
 				comboTime = 0;
 				if (maxCombo <= combo)
 					maxCombo = combo;
