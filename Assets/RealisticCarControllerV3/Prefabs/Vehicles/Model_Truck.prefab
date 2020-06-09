@@ -669,7 +669,7 @@ MonoBehaviour:
   frontLeftT: {fileID: 435626}
   rearRightT: {fileID: 407722}
   rearLeftT: {fileID: 467604}
-  motorForce: 60
+  motorForce: 200
   COM: {fileID: 0}
   rigidbody: {fileID: 0}
 --- !u!1 &143034

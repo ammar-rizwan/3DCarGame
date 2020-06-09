@@ -6,6 +6,7 @@ public class Initialize : MonoBehaviour
 {
     void Awake()
     {
+        int speed = 60;
         int chk = PlayerPrefs.GetInt("chk", 0);
         if (chk == 0)
         {
@@ -14,7 +15,8 @@ public class Initialize : MonoBehaviour
             {
                 string temp = (transform.GetChild(i)).ToString();
                 carClass obj = new carClass();
-                obj.topSpeed = 100;
+                obj.topSpeed = speed;
+                speed+=10;
                 obj.price = 1000;
                 obj.CarID = i;
                 if (i != 0)

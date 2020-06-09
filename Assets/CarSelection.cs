@@ -47,6 +47,7 @@ public class CarSelection : MonoBehaviour
         {
             carClass obj = JsonUtility.FromJson<carClass>(p);
             price.text = (obj.price).ToString();
+            
             if (obj.isLocked == false)
             {
 

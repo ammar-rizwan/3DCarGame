@@ -18,32 +18,33 @@ public void Start(){
 
         COM = GameObject.Find("COM");
         rigidbody.centerOfMass = COM.transform.localPosition;
+        
     
 }
-public void Accelerate(){
-    frontLeftW.motorTorque = 1f * motorForce;
-    frontRightW.motorTorque = 1f * motorForce;
-    rearRightW.motorTorque = 1f * motorForce;
-    rearLeftW.motorTorque = 1f * motorForce;
-}
-    public void UpdateWheelPoses(){
-        UpdateWheelPoses(frontLeftW,frontLeftT);
-        UpdateWheelPoses(frontRightW,frontRightT);
-        UpdateWheelPoses(rearLeftW,rearLeftT);
-        UpdateWheelPoses(rearRightW,rearRightT);
+    public void Accelerate(){
+        rearRightW.motorTorque = 1f * motorForce;
+        rearLeftW.motorTorque = 1f * motorForce;
     }
-    public void UpdateWheelPoses(WheelCollider _collider, Transform _transform){
-        Vector3 _pos = _transform.position;
-            Quaternion _quat = _transform.rotation;
-
-            _collider.GetWorldPose(out _pos, out _quat);
-
-            _transform.position = _pos;
-            _transform.rotation = _quat;
-    }
+    
     private void FixedUpdate()
     {
         Accelerate();
-            
+    }
+    public void isAnotherCar(){
+		RaycastHit hit;
+
+        Debug.DrawRay(transform.position, (transform.forward * 20f), Color.white);
+        if(Physics.Raycast(transform.position, (transform.forward), out hit, 20f) && !hit.collider.isTrigger){
+            frontLeftW.brakeTorque = frontRightW.brakeTorque = 500f;
+            rearRightW.brakeTorque = rearLeftW.brakeTorque = 500f;
+
+		}
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Opponent")
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

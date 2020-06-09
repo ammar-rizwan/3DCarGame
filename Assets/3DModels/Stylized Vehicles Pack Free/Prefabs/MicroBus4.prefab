@@ -648,7 +648,7 @@ Transform:
   m_GameObject: {fileID: 6287319582821184461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.98, y: -2.45, z: -15.71}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 0.22}
   m_Children:
   - {fileID: 6287319582821478377}
   - {fileID: 6287319582821478379}
@@ -681,7 +681,7 @@ MonoBehaviour:
   frontLeftT: {fileID: 6287319582821478369}
   rearRightT: {fileID: 6287319582821478375}
   rearLeftT: {fileID: 6287319582821478373}
-  motorForce: 300
+  motorForce: 200
   COM: {fileID: 0}
   rigidbody: {fileID: 0}
 --- !u!54 &6689239070195518958

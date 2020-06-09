@@ -9,19 +9,20 @@ public class InputManager:MonoBehaviour
     public float vertical;
     public float horizontal;
     public bool Brake;
-
+    
     private void FixedUpdate()
     {
-        vertical = 1f;
-        Brake = (Input.GetAxis("Jump")!=0) ? true : false;
-
-        if(PlayerPrefs.GetInt("tilt")==1){
-            horizontal = Input.acceleration.x;
-
-        }else{
-           horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+        // vertical = 1f;
+        // Brake = (Input.GetAxis("Jump")!=0) ? true : false;
+        horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+        vertical = CrossPlatformInputManager.GetAxis("Vertical");
+        
+        if(PlayerPrefs.GetInt("tilt")!=1){
+            if(vertical<0)
+                vertical = -1f;
+            else
+                vertical = 1f;
+            
         }
-        //vertical = CrossPlatformInputManager.GetAxis("Vertical");
     }
-
 }

@@ -30,7 +30,7 @@ e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventH
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_Chassis
 d85d7b263b531cfd95cfdaaa42f47e8d Assembly-CSharp.dll:.EnemyCarDriver
 bfa0dc3eb5342e93154b84f135e2c80c Assembly-CSharp.dll:.RCC_CarControllerV3
-68d73adc521a9ac2ab929df55ac51d3d Assembly-CSharp.dll:.CarController
+c9e99354e77d308fab6c3994a5e8283d Assembly-CSharp.dll:.CarController
 c57901adcd7b48f0af06fc1c503372f9 Assembly-CSharp.dll:.RCC_TruckTrailer
 a4334e4cbf0c49f69a77b750311461de Assembly-CSharp.dll:.RCC_ColorPickerBySliders
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
@@ -220,7 +220,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 528e9858840cb8370d93939fff6b42d9 Assembly-CSharp.dll:.JoystickPlayerExample
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 ffb2cc8bf3a549eb53c199541c1fb00b Assembly-CSharp.dll:.RCC_AIBrakeZonesContainer
-c033ecf4c2ef8b762c4171d868cbf855 Assembly-CSharp.dll:.OpponentCarGenerator1
+13531b9b16f8af849f0ecfa944ec678d Assembly-CSharp.dll:.OpponentCarGenerator1
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_Customization
 219ec6059796d8951d2adcd8505d0dc2 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_Mirror
@@ -243,6 +243,6 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 6346786c2af049db4ad0af7d9015f696 Assembly-CSharp.dll:.RCC_DashboardInputs
 9dac16f3efc511835ac976dfae55f580 Assembly-CSharp.dll:.VariableJoystick
-987e573657d8aaa9b46222a071c346af Assembly-CSharp.dll:.GameManager
+c2de489344435f66d15b4312073415f6 Assembly-CSharp.dll:.GameManager
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RCC_LevelLoader
 ba498371cb115a3a2aecaa34641eb2e8 Assembly-CSharp.dll:.OpponentCarGenerator

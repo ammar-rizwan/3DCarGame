@@ -10,10 +10,8 @@ public class CarController : MonoBehaviour
 
     public WheelCollider[] wheels= new WheelCollider[4];
     public GameObject[] wheelMesh = new GameObject[4];
-    //public GameObject WheelCollider, WheelMeshes;
     private InputManager IM;
     private Rigidbody rigidbody;
-    public AnimationCurve enginePower;
     public GameObject CenterofMass;
     public float KPH;
     public float MotorSpeed = 100;
@@ -24,20 +22,11 @@ public class CarController : MonoBehaviour
     public float wheelsRPM;
     //public float engineRPM;
     public float[] gears;
-    public float smoothTime=0.09f;
     public int gearNum = 1;
     public GameObject gameUI;
 
     public float distanceTravelled = 0;
     Vector3 lastPosition;
-
-    public Text gameOverText;
-
-
-    //public void GetInput(){
-    //    m_horizontalInput = CrossPlatformInputManager.GetAxis("Horizontal");
-    //    m_verticalInput= CrossPlatformInputManager.GetAxis("Vertical");
-    //}
 
     private void Start()
     {
@@ -60,15 +49,14 @@ public class CarController : MonoBehaviour
     }
     private void moveVehicle()
     {
-        for (int i = 0; i < wheels.Length; i++)
-        {
-            wheels[i].motorTorque = IM.vertical *  MotorSpeed;
-
-        }
         KPH = rigidbody.velocity.magnitude * 3.6f;
+            for (int i = 0; i < wheels.Length; i++)
+            {
+                wheels[i].motorTorque = IM.vertical *  MotorSpeed;
+            }
         if (IM.Brake)
         {
-            wheels[2].brakeTorque = wheels[3].brakeTorque = brakePower;
+           wheels[2].brakeTorque = wheels[3].brakeTorque = brakePower;
         }
         else
         {
@@ -78,13 +66,9 @@ public class CarController : MonoBehaviour
     private void steerVehicle()
     {
 
-        float angle = 15 * IM.horizontal;
+        float angle = 20 * IM.horizontal;
         wheels[0].steerAngle = angle;
         wheels[1].steerAngle = angle;
-
-
-        //rigidbody.velocity = new Vector3(IM.horizontal * 5, 0f, IM.vertical*20);
-
 
         //acerman steering formula
         if (IM.horizontal > 0)
@@ -120,9 +104,7 @@ public class CarController : MonoBehaviour
     }
     private void addDownForce()
     {
-
         rigidbody.AddForce(-transform.up * DownForceValue * rigidbody.velocity.magnitude);
-
     }
     //private void calculateEnginePower()
     //{
@@ -158,22 +140,13 @@ public class CarController : MonoBehaviour
         IM = GetComponent<InputManager>();
         rigidbody = GetComponent<Rigidbody>();
         CenterofMass = GameObject.Find("mass");
-        //WheelCollider = GameObject.Find("WheelsColliders");
-        //WheelMeshes = GameObject.Find("Wheels");
         rigidbody.centerOfMass = CenterofMass.transform.localPosition;
     }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "Opponent")
         {
-        //    gameOverText = gameUI.gameObject.GetComponent<Text>();
-
-        //    gameOverText.text = "Game Over!";
-        //     gameUI.transform.GetChild(0).gameObject.SetActive(true);
-        //     gameUI.transform.GetChild(1).gameObject.SetActive(true);
-    // gameUI.gameObject.SetActive(true);
-    //         gameObject.SetActive(false);
-    gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
