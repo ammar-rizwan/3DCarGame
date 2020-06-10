@@ -31,6 +31,7 @@ public class CarController : MonoBehaviour
     private AudioSource[] audioSource;
     public float distanceTravelled = 0;
     Vector3 lastPosition;
+    public bool brakesApplied;
 
     private void Start()
     {
@@ -54,23 +55,46 @@ public class CarController : MonoBehaviour
     private void moveVehicle()
     {
         KPH = rigidbody.velocity.magnitude * 3.6f;
+        if(IM.vertical>0){
             for (int i = 0; i < wheels.Length; i++)
             {
                 wheels[i].motorTorque = IM.vertical *  MotorSpeed;
             }
-        if (IM.Brake)
-        {
-           wheels[2].brakeTorque = wheels[3].brakeTorque = brakePower;
+            
+            pitch = KPH / topSpeed;
+            audioSource = transform.GetComponents<AudioSource>();
+            foreach (AudioSource item in audioSource)
+            {
+                item.pitch = pitch;
+            }
         }
-        else
-        {
-            wheels[2].brakeTorque = wheels[3].brakeTorque = 0;
+        if (IM.vertical<0){
+            
+            brakesApplied =true;
+           wheels[0].brakeTorque=wheels[1].brakeTorque=wheels[2].brakeTorque = wheels[3].brakeTorque = brakePower;
+        }else{
+                brakesApplied = false;
+                wheels[0].brakeTorque=wheels[1].brakeTorque=wheels[2].brakeTorque = wheels[3].brakeTorque = 0;
         }
+        if(IM.vertical==0){
+            for (int i = 0; i < wheels.Length; i++)
+            {
+                wheels[i].motorTorque =0;
+            }
+        }
+        // if (IM.Brake)
+        // {
+        //    wheels[2].brakeTorque = wheels[3].brakeTorque = brakePower;
+        // }
+        // else
+        // {
+        //     wheels[2].brakeTorque = wheels[3].brakeTorque = 0;
+        // }
     }
     private void steerVehicle()
     {
 
-        float angle = 20 * IM.horizontal;
+        float angle = 10 * IM.horizontal;
         wheels[0].steerAngle = angle;
         wheels[1].steerAngle = angle;
 
@@ -154,16 +178,11 @@ public class CarController : MonoBehaviour
            
             AudioSource.PlayClipAtPoint(crash, transform.position, 1.0F);
             //crash.Play();
-            
-        //    gameOverText = gameUI.gameObject.GetComponent<Text>();
-
-        //    gameOverText.text = "Game Over!";
-        //     gameUI.transform.GetChild(0).gameObject.SetActive(true);
-        //     gameUI.transform.GetChild(1).gameObject.SetActive(true);
-    // gameUI.gameObject.SetActive(true);
-    //         gameObject.SetActive(false);
-    gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }else if (collision.collider.tag == "Finish"){
+            gameObject.SetActive(false);
         }
+
     }
     void Update()
     {

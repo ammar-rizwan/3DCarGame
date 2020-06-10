@@ -840,27 +840,20 @@ MonoBehaviour:
   - {fileID: 1894404873762196819}
   - {fileID: 1894404873762196821}
   - {fileID: 1894404873762196823}
-  enginePower:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   CenterofMass: {fileID: 0}
   KPH: 0
-  MotorSpeed: 300
+  MotorSpeed: 250
   DownForceValue: 50
   radius: 6
   brakePower: 500
   wheelsRPM: 0
   gears: []
-  smoothTime: 0.09
   gearNum: 1
   gameUI: {fileID: 0}
   crash: {fileID: 8300000, guid: 370cb2e9c8bccfe48bdec70db08e4644, type: 3}
   topSpeed: 60
   distanceTravelled: 0
-  gameOverText: {fileID: 0}
+  brakesApplied: 0
 --- !u!114 &242759240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,6 +888,7 @@ MonoBehaviour:
   RR: {fileID: 0}
   nearMisses: 0
   speed: 0
+  carSelected: 0
 --- !u!82 &82414697826150590
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1003,7 +997,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6c7312d1af74e3f4599722894161fafc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.021
+  m_Volume: 0.15
   m_Pitch: -1.88
   Loop: 1
   Mute: 0

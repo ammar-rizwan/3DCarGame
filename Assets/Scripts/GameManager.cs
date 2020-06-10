@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public Text SpeedText;
     public Text DistanceText;
     public GameObject WrongWay;
-
+    public Text t;
 
     public GameObject GameOverUI;
     public Text TotalDistanceText;
@@ -44,16 +44,20 @@ public class GameManager : MonoBehaviour
     public Text TotalScore;
 
     private bool isDaySelected;
-    private float TScore;
+    private int TScore;
     private float WrongTrackTime;
     private int gameMode;
     private bool isWrong ;
+    private bool foo;
+    private float secondsCount;
+
     // private float startPosiziton = 220f, endPosition = -40f;
     // private float desiredPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        foo = true;
         isDaySelected =(PlayerPrefs.GetInt("daySelected") == 1) ? true:false; 
         if(isDaySelected){
             RenderSettings.skybox = Day;
@@ -94,32 +98,39 @@ public class GameManager : MonoBehaviour
             ButtonSteering.gameObject.SetActive(false);
             TiltSteering.gameObject.SetActive(false);
 
-
             TotalDistanceText.text = (RR.distanceTravelled/1000).ToString("f2");
             TotalDistanceMoney.text = "$"+(RR.distanceTravelled/1000)*10;
+
             NearMissText.text = CR.nearMisses.ToString();
-            NearMissMoney.text = (CR.nearMisses*10).ToString();
+            NearMissMoney.text ="$"+ (CR.nearMisses*10).ToString();
+
             TotalScore.text = CR.score.ToString("f1");
+
             WrongTrackText.text = WrongTrackTime.ToString("f1");
-            TScore = (RR.distanceTravelled/1000)+(CR.nearMisses*10);
-            TotalCashText.text = TScore.ToString();
+            WrongTrackMoney.text = "$"+(WrongTrackTime*5).ToString();
+
+            TScore =Mathf.RoundToInt( (RR.distanceTravelled/100)+(CR.nearMisses*10)+((float)(WrongTrackTime*2.5)) );
+            TotalCashText.text = "$"+TScore.ToString();
+            if(foo){
+                int c = PlayerPrefs.GetInt("coins");
+                PlayerPrefs.SetInt("coins",c+TScore) ;
+                foo = false;
+            }
             return;
         }
-        float t1=0,t2;
-        if(Car.transform.position.x<-0.5f && gameMode ==2){
+        if((Car.transform.position.x<-0.5f && gameMode ==2)|| gameMode ==3){
             WrongWay.gameObject.SetActive(true);
-            t1 = Time.time;
+            WrongTrackTime+=Time.deltaTime;
+            t.text = WrongTrackTime.ToString("f1");
             isWrong = true;
-        }else if(isWrong){
-            t2 = Time.time;
-            WrongWay.gameObject.SetActive(false);
-            WrongTrackTime = WrongTrackTime+(t2-t1);
-            isWrong = false;
-            
         }
+            
+        // currentTime = Time.time.ToString("f1");
+        secondsCount += Time.deltaTime;
+        currentTime = secondsCount.ToString("f1");
 
-        currentTime = Time.time.ToString("f1");
         TimeText.text = currentTime + " Sec.";
+        
         SpeedText.text = vehicleSpeed.ToString("f1")+"KM/H";
         DistanceText.text = (RR.distanceTravelled/1000).ToString("f2") + "Kms";
 
@@ -152,11 +163,13 @@ public class GameManager : MonoBehaviour
     }
     public void OnRestarButtonClick()
     {
-        SceneManager.LoadScene(2);
+            Time.timeScale = 1;
+        SceneManager.LoadScene(3);
     }
     public void OnMainMenuButton()
     {
-        SceneManager.LoadScene(0);
+            Time.timeScale = 1;
+        SceneManager.LoadScene(1);
     }
 
     public void onChnageController(){
@@ -171,6 +184,7 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
 /*    void Update()
     {
         // currentSpeed = transform.GetComponent<Rigidbody>().velocity.magnitude * 3.6f;

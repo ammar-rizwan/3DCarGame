@@ -23,9 +23,11 @@ public class CarRaycaster : MonoBehaviour
 	private float comboTime;
 
 	public float speed;
-
+	public int carSelected;
     private void Start()
     {
+        carSelected = PlayerPrefs.GetInt("currentCar");
+
         RR = gameObject.GetComponent<CarController>();
 		scoreText = GameObject.Find("GamePlayUI").transform.GetChild(0).gameObject.GetComponentsInChildren<Text>()[1];
 	}
@@ -40,11 +42,11 @@ public class CarRaycaster : MonoBehaviour
 	{
 	RaycastHit hit;
 
-		Debug.DrawRay(transform.position, (-transform.right * 1.2f), Color.white);
-		Debug.DrawRay(transform.position, (transform.right * 1.2f), Color.white);
-		Debug.DrawRay(transform.position, (transform.forward * 10f), Color.white);
+		Debug.DrawRay(transform.position, (-transform.right * 1f), Color.white);
+		Debug.DrawRay(transform.position, (transform.right * 1f), Color.white);
+		Debug.DrawRay(transform.position, (transform.forward * 5f), Color.white);
 
-		if (Physics.Raycast(transform.position, (-transform.right), out hit,1.2f) && !hit.collider.isTrigger)
+		if (Physics.Raycast(transform.position, (-transform.right), out hit,1f) && !hit.collider.isTrigger)
 		{
 			currentTrafficCarNameLeft = hit.transform.name;
 		}
@@ -55,12 +57,22 @@ public class CarRaycaster : MonoBehaviour
 			{
 
 				nearMisses++;
+                AudioSource.PlayClipAtPoint(swoosh, transform.position, 1.0F);
+
 				combo++;
 				comboTime = 0;
 				if (maxCombo <= combo)
 					maxCombo = combo;
-
+				if(carSelected==0){
 				score += 10f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				}else if (carSelected ==1){
+				score += 15f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				}
+				else if (carSelected ==2){
+				score += 25f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				}else if (carSelected ==3){
+				score += 30f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				}
 				scoreText.text = score.ToString();
 				currentTrafficCarNameLeft = null;
 
@@ -75,7 +87,7 @@ public class CarRaycaster : MonoBehaviour
 		}
 
 
-		if (Physics.Raycast(transform.position, (transform.right), out hit,1.2f) && !hit.collider.isTrigger)
+		if (Physics.Raycast(transform.position, (transform.right), out hit,1f) && !hit.collider.isTrigger)
 		{
 			currentTrafficCarNameRight = hit.transform.name;
 		}
@@ -92,7 +104,16 @@ public class CarRaycaster : MonoBehaviour
 				if (maxCombo <= combo)
 					maxCombo = combo;
 
+				if(carSelected==0){
 				score += 10f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				}else if (carSelected ==1){
+				score += 15f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				}
+				else if (carSelected ==2){
+				score += 25f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				}else if (carSelected ==3){
+				score += 30f * Mathf.Clamp(combo / 1.5f, 1f, 20f);
+				}
 				scoreText.text = score.ToString();
 
 				currentTrafficCarNameRight = null;

@@ -7,17 +7,22 @@ public class Initialize : MonoBehaviour
     void Awake()
     {
         int speed = 60;
+        int price = 1000;
         int chk = PlayerPrefs.GetInt("chk", 0);
-        if (chk == 0)
+        if (chk ==0)
         {
             PlayerPrefs.SetInt("chk", 1);
             for (int i = 0; i < transform.childCount; i++)
             {
+                
                 string temp = (transform.GetChild(i)).ToString();
                 carClass obj = new carClass();
                 obj.topSpeed = speed;
                 speed+=10;
-                obj.price = 1000;
+                obj.price = price;
+                if(i!=0){
+                price+=500;
+                }
                 obj.CarID = i;
                 if (i != 0)
                 {
@@ -31,7 +36,7 @@ public class Initialize : MonoBehaviour
                 PlayerPrefs.SetString(temp, json);
 
             }
-            PlayerPrefs.SetInt("coins",4500);
+            PlayerPrefs.SetInt("coins",100);
 
         }
     }

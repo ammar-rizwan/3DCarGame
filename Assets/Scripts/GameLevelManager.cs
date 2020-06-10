@@ -27,15 +27,22 @@ public class GameLevelManager : MonoBehaviour
         gameMode.gameObject.SetActive(false);
         Location.gameObject.SetActive(true);
     }
+    public void onMode3Selected(){
+        
+        PlayerPrefs.SetInt("level", 3);
+        // SceneManager.LoadScene(2);
+        gameMode.gameObject.SetActive(false);
+        Location.gameObject.SetActive(true);
+    }
     public void onDaySelected(){
         PlayerPrefs.SetInt("daySelected",1);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
 
     }
     public void onNightSelected(){
         PlayerPrefs.SetInt("daySelected",0);
 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
 
     }
 

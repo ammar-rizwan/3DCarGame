@@ -14,19 +14,20 @@ public class CarSelection : MonoBehaviour
     private int currentCar;
     public Text MoneyTxt;
     public Text price;
+    public Text CarTopSpeedText ;
+    public Text CarBrakePowerText;
 
     public Text Selected;
     public int SelectedCarInt;
     private void Awake()
     {
-        MoneyTxt.text=(PlayerPrefs.GetInt("coins")).ToString();
+        MoneyTxt.text="$"+(PlayerPrefs.GetInt("coins")).ToString();
 
         if (PlayerPrefs.HasKey("currentCar"))
             SelectedCarInt = PlayerPrefs.GetInt("currentCar", currentCar);
         else
             SelectedCarInt = 0;
 
-        print(SelectedCarInt);
         SelectCar(0);
         /*PlayerPrefs.SetInt("Car2 (UnityEngine.Transform)", 1);
         PlayerPrefs.SetInt("SportCar2 (UnityEngine.Transform)", 1);//unlocked 
@@ -37,21 +38,19 @@ public class CarSelection : MonoBehaviour
     }
     void Start()
     {
-        MoneyTxt.text = (PlayerPrefs.GetInt("coins")).ToString();
+        MoneyTxt.text = "$"+(PlayerPrefs.GetInt("coins")).ToString();
     }
     private void SelectCar(int _index)
     {
-
         previous.interactable = (_index != 0);
         next.interactable = (_index != transform.childCount-1);
-        Debug.Log(transform.GetChild(_index));
         string nme = (transform.GetChild(_index)).ToString();
         string p = PlayerPrefs.GetString(nme);
         if (p != null && p.Length > 0)
         {
             carClass obj = JsonUtility.FromJson<carClass>(p);
-            price.text = (obj.price).ToString();
-            
+            price.text = "$ "+(obj.price).ToString();
+            CarTopSpeedText.text = (obj.topSpeed).ToString() +"Kms/hr";
             if (obj.isLocked == false)
             {
 
@@ -137,7 +136,7 @@ public class CarSelection : MonoBehaviour
         }
 
         PlayerPrefs.SetInt("coins",coins-price);
-        MoneyTxt.text = (PlayerPrefs.GetInt("coins")).ToString();
+        MoneyTxt.text = "$"+(PlayerPrefs.GetInt("coins")).ToString();
         lockImg.SetActive(false);
         selectB.SetActive(true);
         Debug.Log(PlayerPrefs.GetInt("coins"));
@@ -147,6 +146,13 @@ public class CarSelection : MonoBehaviour
 
     public void PlayButtonClick()
     {
-        SceneManager.LoadScene(1);
+        if(PlayerPrefs.HasKey("currentCar")){
+        SceneManager.LoadScene(2);
+        }else{
+            PlayerPrefs.SetInt("currentCar",0);
+        }
+    }
+    public void BackButtonClick(){
+        SceneManager.LoadScene(0);
     }
 }

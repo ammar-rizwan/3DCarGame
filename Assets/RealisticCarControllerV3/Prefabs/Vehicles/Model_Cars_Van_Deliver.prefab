@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 410528}
   - component: {fileID: 3338834}
   - component: {fileID: 2338052}
-  - component: {fileID: 6567210}
   m_Layer: 8
   m_Name: Car_Body_LOD0
   m_TagString: Player
@@ -80,19 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6567210
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117872}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.67, y: 1.5736327, z: 4.550953}
-  m_Center: {x: 0.00000007816993, y: -0.052418534, z: 0.09368837}
 --- !u!1 &123186
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +167,6 @@ GameObject:
   m_Component:
   - component: {fileID: 429866}
   - component: {fileID: 14634476}
-  - component: {fileID: 11499242}
   m_Layer: 8
   m_Name: RB_Wheel_LOD0
   m_TagString: Player
@@ -233,24 +218,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &11499242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f2810a20460894690b9c5d4b433d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheelModel: {fileID: 0}
-  camber: 0
-  groundIndex: 0
-  compression: 0
-  canSteer: 0
-  steeringMultiplier: 1
 --- !u!1 &129484
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +296,6 @@ GameObject:
   m_Component:
   - component: {fileID: 466690}
   - component: {fileID: 14657016}
-  - component: {fileID: 11491760}
   m_Layer: 8
   m_Name: RF_Wheel_LOD0
   m_TagString: Player
@@ -381,24 +347,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &11491760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f2810a20460894690b9c5d4b433d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheelModel: {fileID: 0}
-  camber: 0
-  groundIndex: 0
-  compression: 0
-  canSteer: 0
-  steeringMultiplier: 1
 --- !u!1 &162224
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,10 +465,12 @@ GameObject:
   m_Component:
   - component: {fileID: 494812}
   - component: {fileID: 5447052}
-  - component: {fileID: 2941267570723521397}
+  - component: {fileID: 5989056931595672632}
+  - component: {fileID: 840790783}
+  - component: {fileID: 114373016618235888}
   m_Layer: 8
   m_Name: Model_Cars_Van_Deliver
-  m_TagString: Player
+  m_TagString: Opponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -533,7 +483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 486928}
@@ -559,7 +509,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2941267570723521397
+--- !u!65 &5989056931595672632
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.67, y: 1.5736327, z: 4.550953}
+  m_Center: {x: 0.00000007816993, y: -0.052418534, z: 0.09368837}
+--- !u!114 &840790783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -579,9 +542,26 @@ MonoBehaviour:
   frontLeftT: {fileID: 471386}
   rearRightT: {fileID: 494370}
   rearLeftT: {fileID: 466870}
-  motorForce: 100
+  motorForce: 60
   COM: {fileID: 0}
   rigidbody: {fileID: 0}
+--- !u!114 &114373016618235888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc527d0344748c44db59f9a48bac6fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wideRayLength: 20
+  tightRayLength: 20
+  sideRayLength: 3
+  PlayerCar: {fileID: 0}
+  carController: {fileID: 0}
 --- !u!1 &173148
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +572,6 @@ GameObject:
   m_Component:
   - component: {fileID: 402248}
   - component: {fileID: 14606322}
-  - component: {fileID: 11482778}
   m_Layer: 8
   m_Name: LF_Wheel_LOD0
   m_TagString: Player
@@ -644,24 +623,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &11482778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f2810a20460894690b9c5d4b433d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheelModel: {fileID: 0}
-  camber: 0
-  groundIndex: 0
-  compression: 0
-  canSteer: 0
-  steeringMultiplier: 1
 --- !u!1 &175952
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,7 +820,6 @@ GameObject:
   m_Component:
   - component: {fileID: 420526}
   - component: {fileID: 14697222}
-  - component: {fileID: 11476928}
   m_Layer: 8
   m_Name: LB_Wheel_LOD0
   m_TagString: Player
@@ -911,24 +871,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &11476928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f2810a20460894690b9c5d4b433d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheelModel: {fileID: 0}
-  camber: 0
-  groundIndex: 0
-  compression: 0
-  canSteer: 0
-  steeringMultiplier: 1
 --- !u!1 &193246
 GameObject:
   m_ObjectHideFlags: 0

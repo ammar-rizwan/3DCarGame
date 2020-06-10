@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 1a665069a245af549b41ac9747f93f5f, type: 2}
 --- !u!1 &60776207
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,9 +353,9 @@ MonoBehaviour:
   CR: {fileID: 0}
   Cars:
   - {fileID: 9193091905229099719, guid: 5a826e1a9f9a0a74fbf63d825c3e464a, type: 3}
-  - {fileID: 8865956996324941505, guid: 5d02eda6ed23abf43bb92baf6f441c0a, type: 3}
   - {fileID: 5686074402418921634, guid: 3c5b9150bbe75ad458fb7e4b20dc7b79, type: 3}
   - {fileID: 1894404873762196831, guid: ae918a24f13c5784ea89fc59b6e39038, type: 3}
+  - {fileID: 8865956996324941505, guid: 5d02eda6ed23abf43bb92baf6f441c0a, type: 3}
   vehicleSpeed: 0
   TiltSteering: {fileID: 899630566}
   ButtonSteering: {fileID: 1273691977}
@@ -365,6 +365,7 @@ MonoBehaviour:
   SpeedText: {fileID: 637614039}
   DistanceText: {fileID: 1984954625}
   WrongWay: {fileID: 1635942666}
+  t: {fileID: 1422968122}
   GameOverUI: {fileID: 612446005}
   TotalDistanceText: {fileID: 1590413126}
   TotalDistanceMoney: {fileID: 2009203547}
@@ -1326,7 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.60784316, b: 0.61960787, a: 1}
+  m_Color: {r: 0, g: 0.38431376, b: 0.38823533, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2498,7 +2499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.60784316, b: 0.61960787, a: 1}
+  m_Color: {r: 0, g: 0.38431376, b: 0.38823533, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3143,8 +3144,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.7, y: -300}
-  m_SizeDelta: {x: 777, y: 470}
+  m_AnchoredPosition: {x: -1.3, y: -292}
+  m_SizeDelta: {x: 1086.2, y: 486}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143694010
 MonoBehaviour:
@@ -3873,6 +3874,83 @@ RectTransform:
   m_AnchoredPosition: {x: -117.8, y: 66}
   m_SizeDelta: {x: 621.3, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1422968120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1422968121}
+  - component: {fileID: 1422968123}
+  - component: {fileID: 1422968122}
+  m_Layer: 5
+  m_Name: WrongTrackTimeText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1422968121
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422968120}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1635942667}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -111}
+  m_SizeDelta: {x: 394, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1422968122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422968120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.38431373, b: 0.3882353, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 785355b5b16010247bb360cd2c286bd8, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 30 secs
+--- !u!222 &1422968123
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422968120}
+  m_CullTransparentMesh: 0
 --- !u!1 &1540807902
 GameObject:
   m_ObjectHideFlags: 0
@@ -4235,6 +4313,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1068235202}
+  - {fileID: 1422968121}
   m_Father: {fileID: 726523830}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4829,7 +4908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.60784316, b: 0.61960787, a: 1}
+  m_Color: {r: 0, g: 0.38431376, b: 0.38823533, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5511,12 +5590,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCar: {fileID: 0}
+  AICar: {fileID: 102514, guid: 0722a9e01046ddd4289c83d741ad6252, type: 3}
   RR: {fileID: 0}
   opponentCar:
   - {fileID: 5403024272172579134, guid: 39747b5fbbeed4c90bcb4359205a52fb, type: 3}
   - {fileID: 6287319582821184461, guid: 77653068d1cd5254c82b4e0048353235, type: 3}
   - {fileID: 1889964009113186, guid: 3fff5b71e380f6348aa33b581d422bd2, type: 3}
   - {fileID: 191810, guid: a404321611e983a4ea9bf400a193b597, type: 3}
+  - {fileID: 102514, guid: 0722a9e01046ddd4289c83d741ad6252, type: 3}
   objectToFollow: {fileID: 0}
   number: 0
   offset: {x: 0, y: 0, z: 20}
@@ -6034,15 +6115,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -3.75
       objectReference: {fileID: 0}
+    - target: {fileID: 1263222864105939285, guid: 7f27e41424e9bc14aaec433f3e0f5982,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 1263222864206690853, guid: 7f27e41424e9bc14aaec433f3e0f5982,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 132d46466cc314a1f8c43782f201192e, type: 2}
+    - target: {fileID: 1263222864206690872, guid: 7f27e41424e9bc14aaec433f3e0f5982,
+        type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 1263222864206690875, guid: 7f27e41424e9bc14aaec433f3e0f5982,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263222864296073033, guid: 7f27e41424e9bc14aaec433f3e0f5982,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1263222864296073141, guid: 7f27e41424e9bc14aaec433f3e0f5982,
         type: 3}

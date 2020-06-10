@@ -724,8 +724,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameMode: {fileID: 2043310790}
   Location: {fileID: 1054479128}
-  Day: {fileID: 2100000, guid: 2d4e8f2e5e0cc504b827f381bbc5f4dd, type: 2}
-  Night: {fileID: 2100000, guid: aafa4c43584dc38429d192508d18a549, type: 2}
 --- !u!4 &474563348
 Transform:
   m_ObjectHideFlags: 0
@@ -920,7 +918,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Mode
+  m_text: Traffic Mode
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -989,7 +987,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -6.848755, z: -2.2268066, w: 0}
   m_textInfo:
     textComponent: {fileID: 614159149}
-    characterCount: 9
+    characterCount: 12
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -1088,7 +1086,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AI Based Traffic
+  m_Text: WrongWay
 --- !u!222 &746186533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2329,7 +2327,7 @@ GameObject:
   - component: {fileID: 2041875463}
   - component: {fileID: 2041875462}
   m_Layer: 5
-  m_Name: Level3
+  m_Name: AIRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2395,12 +2393,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: playGame
-        m_Mode: 2
+      - m_Target: {fileID: 474563347}
+        m_MethodName: onMode3Selected
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 2041875462}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2424,7 +2422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: be61b620854ec4c7f9bd2b8da6b70507, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 237b4f5d6f0bee1419aa9a0c6d1652ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

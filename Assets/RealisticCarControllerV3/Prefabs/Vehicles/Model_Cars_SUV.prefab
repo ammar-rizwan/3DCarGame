@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 474016}
   - component: {fileID: 5483528}
   - component: {fileID: 2275462515659568176}
+  - component: {fileID: 5958226265422894456}
   m_Layer: 8
   m_Name: Model_Cars_SUV
   m_TagString: Opponent
@@ -879,3 +880,16 @@ MonoBehaviour:
   motorForce: 200
   COM: {fileID: 0}
   rigidbody: {fileID: 0}
+--- !u!65 &5958226265422894456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6615958, y: 0.8566016, z: 3.6874723}
+  m_Center: {x: 0.002129351, y: 0.07169922, z: 0.005515019}
